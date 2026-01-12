@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search - Microsoft Bing</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- favicon -->
+
+    <link rel="apple-touch-icon" sizes="180x180" href="Favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+</head>
+
+<body>
+
+    <!-- navbar -->
+
+    <nav class="nav">
+        <div class="nav-left">
+            <ul>
+                <li>
+                    <img src="Icons/microsoft.png" alt="Microsoft logo links boven navbar" class="nav-icon">
+
+                    <h2>Microsoft Bing</h2>
+                </li>
+                <li class="copilot">
+                    <a href="#">
+                        <img src="Icons/copilot-color.png" alt="copilot logo links boven navbar" class="nav-icon">
+                        Copilot
+                    </a>
+                </li>
+                <li class="afbeeldingen">
+                    <a href="#">
+                        Afbeeldingen
+                    </a>
+                </li>
+                <li class="videos">
+                    <a href="#">
+                        Video's
+                    </a>
+                </li>
+                <li class="winkelen">
+                    <a href="#">
+                        Winkelen
+                    </a>
+                </li>
+                <li class="kaarten">
+                    <a href="#">
+                        Kaarten
+                    </a>
+                </li>
+                <li class="nieuws">
+                    <a href="#">
+                        Nieuws
+                    </a>
+                </li>
+                <li class="puntjes">
+                    <a href="#">
+                        ...
+                    </a>
+                    <ul class="puntjes-menu">
+                        <li class="puntjes-mobiel">Mobiel</li>
+                        <li class="puntjes-aanmelden">Aanmelden</li>
+                        <li class="puntjes-nieuws">Nieuws</li>
+                        <li class="puntjes-kaarten">Kaarten</li>
+                        <li class="puntjes-winkelen">Winkelen</li>
+                        <li class="puntjes-videos">Video's</li>
+                        <li class="puntjes-english">English</li>
+                        <li class="puntjes-rewards">Rewards</li>
+                    </ul>
+                </li>
+        </div>
+        <div class="nav-right">
+            <ul>
+                <li class="aanmelden">
+                    <a href="#">
+                        <img src="Icons/profiel.png" alt="profielfoto naast het tekstje aanmelden" class="nav-icon">
+                        Aanmelden
+                    </a>
+                </li>
+                <li class="rewards">
+                    <a href="#">
+                        <img src="Icons/rewards.png" alt="troffee icoon, naast rewards" class="nav-icon">
+                        Rewards
+                    </a>
+                </li>
+                <li class="phone">
+                    <a href="#">
+                        <img src="Icons/phone.png" alt="telefoontje icoon bij de tkest mobiel" class="nav-icon">
+                        Mobiel
+                    </a>
+                </li>
+
+                <li class="taal">
+                    <a href="#">
+                        English
+                    </a>
+                </li>
+                <!-- dropdown menu in nabbar -->
+                <li class="menu" onclick="openmenu()">
+                    <a href="#">
+                        <i class="bi bi-list"></i>
+                    </a>
+                    <ul class="dropdown-menu" onclick="">
+                        <li><a href="#"><i class="bi bi-file-earmark-plus"></i> Verzamelingen</a></li>
+                        <div id="container-om-dropdown-opties">
+                            <li><a href="#"><i class="bi bi-gear-fill"></i> Instellingen</a> <a class="naar-rechts"><i
+                                        onclick="expand(event)" class="bi bi-chevron-down"></i></a></li>
+                                        <!-- submenu instellingen -->
+                            <div id="instellingen">
+                                <li class="submenu-tekst">Taal<br>Nederlands</li>
+                                <li class="submenu-tekst">Land/regio<br>Nederland</li>
+                                <li class="submenu-tekst">Locatie</li>
+                                <li class="submenu-tekst">Spraak</li>
+                                <li class="submenu-tekst">Meer</li>
+
+
+                            </div>
+                            <li><a href="#"><i class="bi bi-lock-fill"></i> Veilig Zoeken</a><a
+                                    class="naar-rechts">Gemmideld</a></li>
+                </li>
+                <li><a href="#"><i class="bi bi-clock-fill"></i> Zoekgeschiedenis</a></li>
+                <li><a href="#"><i class="bi bi-shield-lock-fill"></i> Privacy</a></li>
+                <li><a href="#"><i class="bi bi-chat-left-fill"></i> Feedback</a></li>
+
+                <li><a href="#"><i class="bi bi-circle-half"></i> Uiterlijk</a> <a class="naar-rechts"><i
+                            onclick="expand2(event)" class="bi bi-chevron-down"></i></a></li>
+                            <!-- submenu uiterlijk -->
+                <div id="uiterlijk">
+                    <li class="submenu-tekst"><input type="radio" value="1" name="keuze" class="radio">Licht <img
+                            src="https://www.bing.com/rp/KKmv7jms62e_ic8wypgx5UKGIA8.svg" class="plaatje-beeld-submenu">
+                    </li>
+                    <li class="submenu-tekst"><input type="radio" value="2" name="keuze" class="radio">Donker<img
+                            src="https://www.bing.com/rp/7tTfYznr5m_lbsCaTZ5lJ5NfMNw.svg" class="plaatje-beeld-submenu">
+                    </li>
+                    <li class="submenu-tekst"><input type="radio" value="3" name="keuze"
+                            class="radio">Systeemstandaard<img
+                            src="https://www.bing.com/rp/7htWzqWZv8GSHJaIW1haas9SNTE.svg" class="plaatje-beeld-submenu">
+                    </li>
+                </div>
+                <li><a href="#"><i class="bi bi-person-fill"></i> Uw feed personaliseren</a></li>
+
+
+                <li><a href="#"><i class="bi bi-house-door-fill"></i></i> Uw startpagina aanpassen</a><a
+                        class="naar-rechts"><i onclick="expand3(event)" class="bi bi-chevron-down"></i></a></li>
+                        <!-- submenu startpagina -->
+                <div id="startpagina">
+                    <li class="submenu-tekst">Menubalk weergeven<label class="switch"><input type="checkbox"
+                                id="toggle"><span class="slider"></span></label><label for="toggle"
+                            id="toggle-label"></label>
+                    <li class="submenu-tekst">Nieuws en interesses weergeven<label class="switch"><input type="checkbox"
+                                id="toggle"><span class="slider"></span></label><label for="toggle"
+                            id="toggle-label"></label>
+                    <li class="submenu-tekst">Trending op Bing weergeven<label class="switch"><input type="checkbox"
+                                id="toggle"><span class="slider"></span></label><label for="toggle"
+                            id="toggle-label"></label>
+                    <li class="submenu-tekst">Afbeelding startpagina weergeven<label class="switch"><input
+                                type="checkbox" id="toggle"><span class="slider"></span></label><label for="toggle"
+                            id="toggle-label"></label>
+
+                </div>
+                </li>
+        </div>
+
+        <li><a class="dropdown-links" href="">Privacy en cookies</a>
+            <a class="dropdown-links" href="">Juridisch</a>
+            <a class="dropdown-links" href="">Adverteren</a>
+            <a class="dropdown-links" href="">Over onze advertenties</a>
+            <a class="dropdown-links" href="">Help</a>
+            <a class="dropdown-links" href="">Europese gegevensbescherming</a>
+            <a class="dropdown-links" href="">Cookievoorkeuren beheren</a>
+
+
+
+
+            </ul>
+        </li>
+        </div>
+    </nav>
+
+    <form>
+        <input type="text" class="zoekbalk"><img src="Icons/copilot-color.png" class="copilot-icon-zoekbalk">
+    </form>
+
+    <!-- eerste kleine cards + knoppen daarboven -->
+
+    <div id="container-knoppen">
+        <button id="inklapknop"><i class="bi bi-chevron-down"></i></button>
+        <button id="Knop-pijl-rechts"><i class="bi bi-chevron-right"></i></button>
+        <button id="Knop-pijl-links"><i class="bi bi-chevron-left"></i></button></i></button>
+        <button id="infoknop"><i class="bi bi-geo-alt"></i>info</button>
+    </div>
+    <div id="container-eerste-cards">
+        <p2>
+            <</p2> <!--pijl naar links-->
+                <div class="cards">Poetin beklemtoont: westerse troepen in Oekraïne doelwit leger<img
+                        src="Nieuwsafbeeldingen/nieuws1.jpg" class="plaatjenieuws"></div>
+                <div class="cards">Poolse fans komen met statement voor Nederland na dood Lisa (17)<img
+                        src="Nieuwsafbeeldingen/nieuws2.jpg" class="plaatjenieuws"></div>
+                <div class="cards">Britse chirurg die zijn eigen benen liet amputeren, moet de cel in<img
+                        src="Nieuwsafbeeldingen/nieuws3.jpg" class="plaatjenieuws"></div>
+                <div class="cards">Lid van gevreesde Servische bende opgepakt in Nederland, was al 14 jaar op de
+                    vlucht<img src="Nieuwsafbeeldingen/nieuws4.jpg" class="plaatjenieuws"></div>
+                <div class="cards">Rafael van der Vaart is hard in rust van Nederland - Polen: 'Ik vind het een rare
+                    kwibus<img src="Nieuwsafbeeldingen/nieuws5.jpg" class="plaatjenieuws"></div>
+                <div class="cards">Kliklaminaat zorgt voor burenruzie in Mr. Frank Visser Doet Uitspraak: Verpest<img
+                        src="Nieuwsafbeeldingen/nieuws6.jpg" class="plaatjenieuws"></div>
+                <div class="cards">Om deze opvallende reden bleef Leclerc na crash in de Zandvoortse duinen zitten<img
+                        src="Nieuwsafbeeldingen/nieuws7.jpg" class="plaatjenieuws"></div>
+                <div class="cards">Alles over Merel Westrik uit De Slimste Mens<img src="Nieuwsafbeeldingen/nieuws8.jpg"
+                        class="plaatjenieuws">
+                </div>
+                <p2>></p2> <!--pijl naar rechts-->
+    </div>
+
+    <!-- 2de grotere cards -->
+
+    <div id="container-tweede-cards">
+        <div class="image-container">
+            <img src="Nieuwsafbeeldingen/nieuws9.jpg" alt="Nieuws 9" class="plaatje-nieuws9-en-13">
+            <div class="text-overlay">
+                <p>GPFans . 11u</p>
+                Williams vecht uitslag Dutch GP aan bij FIA, Verstappen slaat auto Racing
+                Bulls af
+                | GPFans Recap
+                <br>
+                <p><i class="bi bi-hand-thumbs-up"></i>24 <i class="bi bi-hand-thumbs-down"> <i
+                            class="bi bi-chat-left"></i></i>4</p>
+            </div>
+        </div>
+        <div class="cards2">
+            <img src="Nieuwsafbeeldingen/nieuws10.jpg" class="plaatjenieuws">
+            <p>showbizzdaily . 5u</p>
+            Doodstraf voor Chinese ster Zhang Yiyang, maakt Peking bekend
+            <br>
+            <p><i class="bi bi-hand-thumbs-up"></i>21 <i class="bi bi-hand-thumbs-down"> <i
+                        class="bi bi-chat-left"></i></i>8</p>
+        </div>
+
+        <div class="cards2">
+            <img src="Nieuwsafbeeldingen/nieuws11.jpg" class="plaatjenieuws">
+            <p>Beau Monde . 1d</p>
+            Het royal dieet: deze 5 dingen weigeren hoogheden te eten
+            <br>
+            <p><i class="bi bi-hand-thumbs-up"></i>8 <i class="bi bi-hand-thumbs-down"> <i
+                        class="bi bi-chat-left"></i></i> 1</p>
+        </div>
+
+
+        <div class="cards2">
+            <img src="Nieuwsafbeeldingen/nieuws12.jpg" class="plaatjenieuws">
+            <p>Bekende Buren . 1d</p>
+            Peter Gillis zet miljoenvilla te koop
+            <br>
+            <p><i class="bi bi-hand-thumbs-up"></i>16 <i class="bi bi-hand-thumbs-down"> <i
+                        class="bi bi-chat-left"></i></i> 9</p>
+        </div>
+
+        <div class="cards2">
+            <img src="Nieuwsafbeeldingen/nieuws14.jpg" class="plaatjenieuws">
+            <p>Geldzaken . 2u</p>
+            Dit salaris verdient een 'echte' supermarktmanager bij Albert Heijn <br>
+            <p><i class="bi bi-hand-thumbs-up"></i>86 <i class="bi bi-hand-thumbs-down"> <i
+                        class="bi bi-chat-left"></i></i> 13</p>
+        </div>
+        <div class="cards2">
+            <img src="Nieuwsafbeeldingen/nieuws15.jpg" class="plaatjenieuws">
+            <p>Autoblog . 8u</p>
+            Nog even en bijna 3 miljoen Nederlanders kunnen niet meer betaald parkeren
+            <br>
+            <p><i class="bi bi-hand-thumbs-up"></i>3 <i class="bi bi-hand-thumbs-down"> <i
+                        class="bi bi-chat-left"></i></i> 9</p>
+        </div>
+        <div class="cards2">
+            <img src="Nieuwsafbeeldingen/nieuws16.jpg" class="plaatjenieuws">
+            <p>FC Update . 11u</p>
+            Wesley Sneijder vertelt hoeveel kilo hij is kwijtgeraakt
+            <br>
+            <p><i class="bi bi-hand-thumbs-up"></i>56 <i class="bi bi-hand-thumbs-down"> <i
+                        class="bi bi-chat-left"></i></i> 2</p>
+        </div>
+        <div class="image-container">
+            <img src="Nieuwsafbeeldingen/nieuws13.jpg" alt="Nieuws Sem Steijn" class="plaatje-nieuws9-en-13">
+            <div class="text-overlay">
+                <p>FC Update . 2du</p>
+
+                'Sem Steijn mag niet meer worden opgeroepen voor het Nederlands elftal'
+                <br>
+                <p><i class="bi bi-hand-thumbs-up"></i>28 <i class="bi bi-hand-thumbs-down"> <i
+                            class="bi bi-chat-left"></i></i> 6</p>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <img src="Nieuwsafbeeldingen/nieuws22.jpg" alt="Nieuws Geld" class="plaatje-nieuws9-en-13">
+            <div class="text-overlay">
+                <p>Geldzaken . 1u</p>
+                Zoveel spaargeld hebben alleenstaanden gemiddeld op hun rekening staan
+                <br>
+                <p><i class="bi bi-hand-thumbs-up"></i>28 <i class="bi bi-hand-thumbs-down"> <i
+                            class="bi bi-chat-left"></i></i>2</p>
+            </div>
+        </div>
+
+
+        <div class="cards2">
+            <img src="Nieuwsafbeeldingen/nieuws18.jpg" class="plaatjenieuws">
+            <p>Upday News . 22u</p>
+            Zelensky: uiterst gevaarlijk precedent voor Europa<br>
+
+            <br>
+            <p><i class="bi bi-hand-thumbs-up"></i>52 <i class="bi bi-hand-thumbs-down"> <i
+                        class="bi bi-chat-left"></i></i> 3</p>
+        </div>
+
+        <div class="cards2">
+            <img src="Nieuwsafbeeldingen/nieuws19.jpg" class="plaatjenieuws">
+            <p>ANP . 21u</p>
+            Koblenko waarschuwt Nederland: ik weet hoe regimes afglijden<br>
+
+            <br>
+            <p><i class="bi bi-hand-thumbs-up"></i>25 <i class="bi bi-hand-thumbs-down"> <i
+                        class="bi bi-chat-left"></i></i> 1</p>
+        </div>
+        <div class="cards2">
+            <img src="Nieuwsafbeeldingen/nieuws20.jpg" class="plaatjenieuws">
+            <p>NU . 2du</p>
+            Polen: Nederland hielp bij neerhalen drones<br>
+            <br>
+            <p><i class="bi bi-hand-thumbs-up"></i>52 <i class="bi bi-hand-thumbs-down"> <i
+                        class="bi bi-chat-left"></i></i> 3</p>
+
+        </div>
+    </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>

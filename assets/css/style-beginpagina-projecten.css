@@ -1,0 +1,166 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-image: url(../Afbeeldingen/background.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; /* correct syntax */
+    opacity: 0;
+    animation: Binnenkomsttransition 0.5s ease forwards;
+}
+
+@keyframes Binnenkomsttransition {
+    to {
+        opacity: 1;
+    }
+}
+
+.navbar {
+    background: linear-gradient(
+        90deg,
+        rgb(66, 153, 230) 0%,
+        rgb(37, 128, 202) 49%,
+        rgba(0, 132, 227, 1) 52%,
+        rgba(67, 124, 247, 1) 100%
+    );
+    justify-content: space-between;
+    display: flex;
+    padding: 15px;
+    box-shadow: 10px 20px 50px rgb(126, 126, 126);
+    position: relative;
+    z-index: 20;
+}
+
+/* zwarte tekst navbar */
+
+.navbar-active {
+    color: rgb(0, 0, 0);
+}
+
+/* container om navbar opties */
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+/* opties in navbar */
+
+ul li a {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-family: "Poppins" sans-serif;
+}
+
+ul li a:hover {
+    color: black;
+    transition: 0.3s;
+}
+
+#navbar-titel {
+    color: white;
+    font-family: "Poppins" sans-serif;
+    font-size: 25px;
+}
+
+/* Haal de text portfolio CHris koopman weg bij klein scherm */
+@media only screen and (max-width: 700px) {
+    #navbar-titel {
+        display: none;
+    }
+
+    /* opties in midden bij kleine schermen */
+    .navbar ul {
+        margin: auto;
+    }
+}
+
+/* bij HELE kleine schermen text in navbar kleiner */
+
+@media only screen and (max-width: 450px) {
+    .navbar ul li a {
+        font-size: 15px;
+    }
+    .navbar ul {
+        gap: 15px;
+    }
+}
+
+#text-vlak {
+    color: white;
+    width: 100%;
+    min-width: 800px;
+    height: fit-content;
+    border-radius: 3%;
+    background-color: rgba(255, 255, 255, 0);
+    margin: auto;
+    border-radius: 50px;
+}
+
+/* als klein scherm breedte van text-vlak hoger, zodat niet te smal */
+
+@media only screen and (max-width: 850px) {
+    #text-vlak {
+        width: 80%;
+        min-width: 0;
+    }
+}
+
+/* als HEEL klein scherm breedte van text-vlak 100% zodat zichbaar voor telefoons */
+
+@media only screen and (max-width: 450px) {
+    #text-vlak {
+        width: 95%;
+        min-width: 0;
+    }
+    .plaatje {
+        min-width: 200px;
+    }
+}
+
+.container-om-tekst-vlak {
+    display: flex;
+    justify-content: center; /* horizontaal */
+    align-items: center; /* verticaal */
+    min-height: calc(90vh - 80px); /* neemt hoogte scherm minus navbar */
+}
+
+#text-vlak:hover {
+    transform: scale(1.01);
+    transition: 0.3s;
+}
+
+p {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    padding: 50px;
+}
+
+a.button {
+    padding: 10px 10px;
+    border-radius: 5%;
+    color: white;
+    background-color: rgb(86, 145, 233);
+    text-decoration: none;
+    display: inline-block;
+}
+
+a.button:hover {
+    transform: scale(1.05);
+    background-color: rgb(41, 112, 245);
+    transition: 0.3s;
+}
+
+.plaatje {
+    width: 50%;
+    min-width: 200px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}

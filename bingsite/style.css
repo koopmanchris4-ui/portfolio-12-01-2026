@@ -1,0 +1,774 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-image: url(background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* gehele navbar */
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* items in navbar */
+
+nav a {
+    font-size: 15px;
+    display: block;
+    color: rgb(201, 201, 201);
+    text-decoration: none;
+}
+
+/* navbar items links */
+
+.nav-left li {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+/* navbar items rechts */
+
+.nav-right li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+/* Microsoft Bing tekst */
+nav h2 {
+    color: white;
+    margin: 0;
+    padding-right: 20px;
+    font-weight: normal;
+}
+
+/* icoontjes bij sommige items in navbar */
+
+.nav-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+nav .menu {
+    position: relative;
+}
+
+nav .puntjes {
+    position: relative;
+}
+
+/* DE MEDIAQUERIES VOOR DE NAVBAR LI ITEMS!!! */
+
+@media screen and (max-width: 1750px) {
+    /* verberg mobiel linkje*/
+    nav li.phone {
+        display: none;
+    }
+}
+@media screen and (max-width: 1550px) {
+    /* verberg aanmelden linkje*/
+    nav li.aanmelden {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1350px) {
+    /* verberg nieuws linkje*/
+    nav li.nieuws {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    /* verberg kaarten linkje*/
+    nav li.kaarten {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    /* verberg winkelen linkje*/
+    nav li.winkelen {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    /* verberg aanmelden linkje*/
+    nav li.aanmelden {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    /* verberg videos linkje*/
+    nav li.videos {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    /* verberg enlgish linkje*/
+    nav li.taal {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    /* verberg rewards linkje*/
+    nav li.rewards {
+        display: none;
+    }
+
+    /* bij 700px padding minder zodat alles het past op telefoon scherm */
+    .nav-right li,
+    .nav-left li {
+        padding: 7px;
+    }
+}
+
+/* dropdown menu in navbar (helemaal rechts), normaal verberg alle opties */
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: rgb(248, 248, 248);
+    border-radius: 5px;
+    list-style: none;
+    padding: 0;
+    min-width: 325px;
+    z-index: 20;
+    right: 0;
+    top: 100%;
+}
+
+.dropdown-menu i {
+    color: rgb(161, 161, 161);
+    padding: 10px;
+    font-size: larger;
+}
+
+.dropdown-menu li:hover {
+    background-color: rgb(229, 229, 229);
+}
+
+.dropdown-menu li a {
+    color: black;
+}
+
+/* bij hover over de dropdown icon, laat de dropdown menu zien */
+
+/* bij telefoonscherm klapt het dropdown-menu uit naar rechts ipv links */
+
+@media screen and (max-width: 500px) {
+    .dropdown-menu {
+        left: 20%;
+    }
+}
+/* voor de rand onder verzamelingen en startpagina */
+#container-om-dropdown-opties {
+    border-top: 2px solid rgb(179, 179, 179);
+    border-bottom: 2px solid rgb(179, 179, 179);
+}
+
+/* instellingen dropdown submenu, normaal verborgen */
+#instellingen{
+    display:none
+}
+
+/* uiterlijk dropdown submenu, normaal verborgen */
+
+#uiterlijk{
+    display:none
+}
+
+/* startpagina dropdown submenu. normaal verborgen */
+
+#startpagina{
+    display:none
+}
+
+/* tekst in dropdown menu */
+
+.dropdown-menu li a{
+    color: rgb(33, 33, 33);
+    font-size: smaller;
+    padding-top: 3%;
+}
+/* rechter tekst in dropdown */
+
+.naar-rechts{
+    margin-left: auto;
+    cursor: pointer;
+}
+
+/* linkjes onderaan dropdown menu */
+
+.dropdown-links{
+    padding: 5px;
+    text-decoration: underline;
+
+}
+
+/* submenu tekstjes */
+.submenu-tekst{
+    color: rgb(94, 94, 94);
+    cursor: pointer;
+    margin-left: 30px;
+    font-size: smaller;
+}
+
+/* radio buttons in submenu - iets ruimte tussen tekst */
+
+input.radio{
+    margin-right: 10px;
+}
+
+/* plaatje van beeld (Licht, donker of systeemstandaard) */
+
+.plaatje-beeld-submenu{
+    width: 40px;
+    margin-left: auto;
+    margin-right: 30px;
+
+}
+
+/* CSS VOOR SCHUIFSCHAKELaAR!! */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  margin-left: auto;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+
+/* Puntjes menu (laatste van links in navbar) , normaal de opties in het menu verbergen */
+
+nav li.puntjes-mobiel,
+nav li.puntjes-aanmelden,
+nav li.puntjes-nieuws,
+nav li.puntjes-kaarten,
+nav li.puntjes-winkelen,
+nav li.puntjes-videos,
+nav li.puntjes-english,
+nav li.puntjes-rewards {
+    display: none;
+}
+
+/* puntjes menu style (zelfde als dropdown) */
+
+.puntjes-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 5px;
+    list-style: none;
+    padding: 0;
+    min-width: 300px;
+    z-index: 20;
+    right: 0;
+    top: 100%;
+}
+
+/* puntjes menu wordt zichtbaar bij hover */
+
+.puntjes-menu i {
+    color: rgb(161, 161, 161);
+}
+/* kleur van de puntjes worden wit in navbar als je hovert */
+
+.puntjes-menu li:hover {
+    background-color: rgb(229, 229, 229);
+    display: block;
+}
+
+/* MEDIAQUERIES - Puntjesmenu */
+/* wanneer items van navbalk weggaan komen ze tevoorschijn in het mnenu */
+
+@media screen and (max-width: 1750px) {
+    nav li.puntjes-mobiel {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1550px) {
+    nav li.puntjes-aanmelden {
+        display: block;
+    }
+}
+@media screen and (max-width: 1350px) {
+    nav li.puntjes-nieuws {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    nav li.puntjes-kaarten {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    nav li.puntjes-winkelen {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    nav li.puntjes-videos {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    nav li.puntjes-english {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    nav li.puntjes-rewards {
+        display: block;
+    }
+}
+
+/* copilot naast zoekbalk */
+
+.copilot-icon-zoekbalk {
+    margin-top: 7px;
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+/* bij 1100px gaat het icoontje van zoekbalk weg */
+
+@media screen and (max-width: 1100px) {
+    .copilot-icon-zoekbalk {
+        display: none;
+    }
+}
+
+/* zoekblak, ruimte tussen navbar en zoekbalk */
+
+form {
+    display: flex;
+    justify-content: center;
+    margin-top: 7%;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+/* de zoekbalk styling ( + icoontjes) */
+
+input.zoekbalk {
+    width: 50rem;
+    height: 50px;
+    border-radius: 40px;
+    border: none;
+    background-image:
+        url("Icons/searchicon.png"), url("Icons/mic.png"), url("Icons/camera.jpg"), url("Icons/keyboard.png");
+    background-position:
+        10px 10px,
+        calc(100% - 90px) 10px,
+        calc(100% - 60px) 10px,
+        calc(100% - 20px) 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    background-size: 30px 30px;
+    font-size: large;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 10%; /*beejte ruimte tussen zoekbalk en cards*/
+}
+
+/* zoekbalk wordt iets grijs bij hover */
+
+input:hover {
+    background-color: rgb(246, 246, 246);
+}
+
+/* container om de bovenste kleine cards */
+
+#container-eerste-cards {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+    padding: 10px;
+    justify-content: center;
+}
+
+/* styling van de kleine cards */
+
+.cards {
+    background-color: rgb(41, 41, 41);
+    width: 11.5%;
+    color: white;
+    border-radius: 5%;
+    font-size: 13px;
+    cursor: pointer;
+
+    /* plaatjes binnen de cards */
+}
+
+.plaatjenieuws {
+    width: 100%;
+    border-radius: 5%;
+    -webkit-user-drag: none;
+}
+/* container grotere cards onderaan */
+
+#container-tweede-cards {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    width: 90%;
+    padding: 20px;
+    height: fit-content;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(194, 194, 194, 0.6);
+    justify-content: center;
+    -webkit-user-drag: none;
+}
+
+/* container van plaatje nieuws 9 & 13 (plaatje van max verstappen & Sem Steijn) */
+
+.image-container {
+    position: relative;
+    width: 36%;
+    margin: 5px;
+    min-height: 200px;
+    aspect-ratio: 16 / 9;
+}
+
+/* plaatje van max verstappen& Sem Steijn*/
+
+.plaatje-nieuws9-en-13 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-user-drag: none;
+    border-radius: 3%;
+}
+
+/* text over plaatje-niews 9 en 13 (max verstappen & Sem Steijn) */
+
+.text-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    font-size: 1.1rem;
+    color: white;
+    font-weight: bold;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+/* 3 witte cards rechtsonder */
+
+.cards2 {
+    background-color: rgb(255, 255, 255);
+    width: 18%;
+    color: rgb(0, 0, 0);
+    border-radius: 5%;
+    font-size: 1.2vw;
+    height: auto;
+    min-height: 200px; /* Zelfde minimale hoogte voor kleinere kaarten */
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+/* plaatje max verstappen en Sem Steijn iets donkerder als hover */
+
+.plaatje-nieuws9-en-13:hover {
+    filter: brightness(80%);
+    transition: filter 0.3s ease;
+}
+
+/* 3 rechtsonder plaatjes iets donkerder als hover over card */
+
+.cards2:hover {
+    .plaatjenieuws {
+        filter: brightness(80%);
+        transition: filter 0.3s ease;
+    }
+}
+
+/* tekst van duimpjes en comments icoontjes onder tweede cards */
+
+p {
+    font-size: small;
+}
+
+/* DE MEDIAQUERIES VOOR DE CARDS */
+
+/* wanneer 1300px worden de eerste cards iets breder/groter zodat beter zichbaar voor kleine schermpjes */
+
+@media screen and (max-width: 1300px) {
+    .cards {
+        width: 10%;
+    }
+
+    /* bij 1300px gaat container van tweede cards naar beneden omdat eerste cards ook naar beneden gaan (niet overlappen) */
+
+    #container-tweede-cards {
+        margin-top: 10%;
+    }
+}
+
+/* wanneer 1200px worden de cards weer iets breder/groter */
+
+@media screen and (max-width: 1200px) {
+    .cards {
+        width: 20%;
+    }
+
+    /* bij 1200px gaat container van tweede cards naar beneden omdat eerste cards ook naar beneden gaan (niet overlappen), ook komt alles onder elkaar te staan */
+
+    #container-tweede-cards {
+        margin-top: 10%;
+        /*ruimte tussen de 2 nieuws container*/
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    /* nieuws 9 & 13(max verstappen & Sem Steijn) wordt hele breedte bij kleine schermen */
+
+    .image-container {
+        min-width: 100%;
+    }
+
+    /* tekst van card (Max verstapprn & Sem Steijn) ietjes kleiner bij kleiner scherm, zodat tekst niet te veel over plaatje */
+
+    .text-overlay {
+        font-size: 1rem;
+    }
+
+    /* bij 1200px (onder elkaar) worden de cards 2 kleiner en iets ruimte ertussen */
+    .cards2 {
+        width: 45%;
+        height: auto;
+        margin: 2%;
+        font-size: 2vw; /*bij kleine schermen, tekst iets groter voor leesbaarheid*/
+    }
+}
+
+/* wanneer 800px worden de cards breder/groter */
+
+@media screen and (max-width: 800px) {
+    .cards {
+        width: 25%;
+    }
+
+    /* bij 800px worden de cards 2 groter, voor betere leesbaarheid op telefoons */
+    /* het wordt 1 rij */
+
+    .cards2 {
+        width: 100%;
+        height: auto;
+        margin: 5%;
+    }
+
+    /* bij 800px gaat container van tweede cards naar beneden omdat eerste cards ook naar beneden gaan (niet overlappen)*/
+
+    #container-tweede-cards {
+        margin-top: 10%;
+    }
+}
+
+/* bij 650px worden de eerste cards nog groter voor leesbaarheid op telefoon*/
+
+@media screen and (max-width: 650px) {
+    .cards {
+        width: 35%;
+    }
+
+    .cards2 {
+        font-size: 3vw;
+    }
+}
+
+/* de pijltjes naast eerste cards */
+
+p2 {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    color: rgb(198, 198, 198);
+}
+
+p2:hover {
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+/* bij kleiner scherm, haal de pijltjes weg, want niet meer nodoig */
+
+@media screen and (max-width: 1750px) {
+    p2 {
+        display: none;
+    }
+}
+
+/* bij ultra kleine schermen de tekst van de grote cards (max verstappen enz) kleiner, zodat niet uit de card */
+
+@media screen and (max-width: 400px) {
+    .text-overlay {
+        font-size: 3vw;
+    }
+
+    /* bij ultra kleine schermen de grootte van de eerste cards heel groot, zodat het goed leesbaar blijft */
+    .cards {
+        width: 80%;
+    }
+}
+
+/* container om donkergrijze knoppen boven cards heen */
+
+#container-knoppen {
+    margin: auto;
+    width: 85%;
+    height: 50px;
+}
+
+/* Knop met V erop */
+
+#inklapknop {
+    float: left;
+    border-radius: 5px;
+    background-color: rgb(81, 81, 81);
+    color: rgb(201, 201, 201);
+    padding: 10px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+}
+
+/* knoppen rechts van scherm onder zoekbalk (info, < & >*/
+
+#infoknop,
+#Knop-pijl-rechts,
+#Knop-pijl-links {
+    border-radius: 5px;
+    background-color: rgb(81, 81, 81);
+    color: rgb(201, 201, 201);
+    padding: 10px;
+    margin-right: 10px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    float: right;
+}
+
+#inklapknop:hover,
+#infoknop:hover,
+#Knop-pijl-rechts:hover,
+#Knop-pijl-links:hover {
+    color: white;
+}
+
+/* MEDIA QUERIES OM BREEDTE VAN KNOPPEN CONTAINER ONG HETZELFDE ALS EERSTE CARDS CONTAINER TE KRIJGEN. Dat alles meebeweegt */
+
+@media screen and (max-width: 1300px) {
+    #container-knoppen {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #container-knoppen {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    #container-knoppen {
+        width: 64%;
+    }
+}

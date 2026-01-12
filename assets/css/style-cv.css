@@ -1,0 +1,264 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+
+    /* binnenkomst transition */
+    opacity: 0;
+    animation: Binnenkomsttransition 0.5s ease forwards;
+}
+
+.fixed-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Zorgt dat het achter je content blijft */
+
+    background-image: url(../Afbeeldingen/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    /* Tip: Apple apparaten houden van deze regel voor soepele rendering */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+@keyframes Binnenkomsttransition {
+    to {
+        opacity: 1;
+    }
+}
+
+#navbar-container {
+    display: flex;
+}
+
+.navbar {
+    height: 60px;
+    display: flex;
+    width: 100%;
+    background-color: rgb(45, 62, 108);
+    box-shadow:
+        rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px,
+        rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px,
+        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#navbar-titel {
+    margin: 10px;
+    font-size: 20px;
+    color: white;
+    position: absolute;
+}
+
+.navbar ul {
+    z-index: 100;
+    margin: auto;
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.navbar ul li a {
+    transition: 0.2s;
+    color: white;
+    text-decoration: none;
+    &:hover {
+        color: rgb(0, 0, 0);
+    }
+}
+
+.navbar-active {
+    color: rgb(162, 162, 162) !important;
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+#theme-toggle:hover {
+    color: black;
+    transition: 0.3s;
+}
+
+#hamburger-btn {
+    display: none;
+    width: 50px;
+    height: 50px;
+}
+
+/* bij kleine schermen, hamburger menu */
+@media only screen and (max-width: 800px) {
+    .navbar ul {
+        pointer-events: none;
+        width: 100%;
+        opacity: 0; /* Verberg menu op kleinere schermen */
+        position: absolute;
+        top: 60px;
+        right: 0;
+        left: 0;
+        background-color: rgba(54, 78, 139, 0.609);
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #navbar-titel {
+        display: none;
+    }
+
+    #hamburger-btn {
+        display: block; /* Toon de hamburger knop op kleinere schermen */
+    }
+    .navbar.active ul {
+        pointer-events: all;
+        transition: 0.3s;
+        opacity: 1; /*menu weer tonen op active (hamburger knop)*/
+    }
+}
+
+#achtergrondfade {
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.064) 0%,
+        rgba(255, 255, 255, 0.377) 50%,
+        rgba(93, 93, 93, 0.253) 100%
+    );
+}
+
+/* de gehele CV */
+
+#CV-container{
+    border-radius: 20px;
+    transition: 0.2s;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    height: fit-content;
+    min-width: 500px;
+    width: 40%;
+    background-color: rgba(240, 248, 255, 0.563);
+    padding: 30px;
+    &:hover{
+        transform: translateY(-10PX);
+        background-color: rgba(255, 255, 255, 0.642)
+    }
+;}
+
+/* bij 500px wordt min-width en tekst kleiner, zodat voor telefoons alles goed op shcerm staat */
+@media only screen and (max-width: 500px){
+    #CV-container{
+       min-width: 300px !important;
+       font-size: small;
+}
+}
+
+
+/* profielfoto in de CV */
+
+#cvimg{
+    display: block;
+    width: 150px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    background: radial-gradient(circle, rgb(204, 204, 204) 51%, rgb(154, 154, 154) 100%);
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.132) 0px 5px 15px;}
+
+/* blauwe tekst in de CV (MBO 4 blabla) */
+
+#opleiding-text{
+    color: rgb(53, 53, 128);
+    font-weight: 600;
+}
+
+/* mijn beschrijving */
+
+#over-mij-tekst{
+margin-bottom: 20px;
+}
+
+/* container om de linker zijkant met titels in de CV */
+#middenstuk{
+    display: block;
+    height: fit-content;
+    width: 50%;
+    flex-wrap: wrap;
+}
+
+/* titels zijn de blauwe kopjes (dus vaardigheden, opleidingen etc) */
+.titels{
+    border-radius: 5px;
+    color: white;
+    padding: 15px;
+    background-color: rgba(56, 63, 123, 0.905);
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;}
+
+
+/*  de lijstjes onder de titels */
+#persoonlijke-info, #vaardigheden, #opleidingen, #werkervaring, #stages{
+    text-align: start;
+    width: fit-content;
+    display: block;
+    gap: 15px;
+    padding: 20px;
+}
+
+/* tekstjes waar datum in staat, iets grijzer */
+#datum{
+color: rgb(77, 77, 77);
+font-style: italic;
+}
+
+/* flex container om linker en rechter zijkant, zodat het naast elkaar komt  */
+#flex-wrapper-middenstuk-en-zijkant{
+    display: flex;
+    justify-content: center;
+    gap: 20%;
+}
+
+
+/* bij 1000px komen de 2 zijkanten onder elkaar en middenstuk wordt 100% */
+
+@media only screen and (max-width: 1000px){
+    #flex-wrapper-middenstuk-en-zijkant{
+        flex-direction: column;
+}
+#middenstuk{
+    width: 100% !important;
+}
+}
+
+
+/* download knop voor cv onderaan CV */
+#download-cv-btn{
+    display: block;
+    transition: 0.2s;
+    background-color: rgba(56, 63, 123, 0.905);
+    color: white;
+    border: none;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 10px;
+    &:hover{
+    background-color: rgba(21, 26, 73, 0.905);
+    transform: scale(1.02);
+    }
+}

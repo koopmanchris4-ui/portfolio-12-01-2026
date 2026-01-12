@@ -1,0 +1,258 @@
+/* zodat navbar veolledig aansluit op scherm */
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+
+    /* binnenkomst transition */
+    opacity: 0;
+    animation: Binnenkomsttransition 0.5s ease forwards;
+}
+
+.fixed-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Zorgt dat het achter je content blijft */
+    
+    background-image: url(../Afbeeldingen/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    
+    /* Tip: Apple apparaten houden van deze regel voor soepele rendering */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+@keyframes Binnenkomsttransition {
+    to {
+        opacity: 1;
+    }
+}
+
+#navbar-container {
+    display: flex;
+}
+
+.navbar {
+    height: 60px;
+    display: flex;
+    width: 100%;
+    background-color: rgb(45, 62, 108);
+    box-shadow:
+        rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px,
+        rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px,
+        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#navbar-titel {
+    margin: 10px;
+    font-size: 20px;
+    color: white;
+    position: absolute;
+}
+
+.navbar ul {
+    z-index: 100;
+    margin: auto;
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.navbar ul li a {
+    transition: 0.2s;
+    color: white;
+    text-decoration: none;
+    &:hover {
+        color: rgb(0, 0, 0);
+    }
+}
+
+.navbar-active {
+    color: rgb(162, 162, 162) !important;
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+#theme-toggle:hover {
+    color: black;
+    transition: 0.3s;
+}
+
+#hamburger-btn {
+    display: none;
+    width: 50px;
+    height: 50px;
+}
+
+/* bij kleine schermen, hamburger menu */
+@media only screen and (max-width: 800px) {
+    .navbar ul {
+        pointer-events: none;
+        width: 100%;
+        opacity: 0; /* Verberg menu op kleinere schermen */
+        position: absolute;
+        top: 60px;
+        right: 0;
+        left: 0;
+        background-color: rgba(54, 78, 139, 0.609);
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #navbar-titel {
+        display: none;
+    }
+
+    #hamburger-btn {
+        display: block; /* Toon de hamburger knop op kleinere schermen */
+    }
+    .navbar.active ul {
+        pointer-events: all;
+        transition: 0.3s;
+        opacity: 1; /*menu weer tonen op active (hamburger knop)*/
+    }
+}
+
+/* vlak onder navbar met mijn naam en hoofd */
+
+#grijsvlak {
+    height: 250px;
+    width: 100%;
+    background-color: rgba(222, 222, 222, 0);
+    padding-top: 3%;
+    display: flex;
+    align-items: center;
+}
+
+#plaatjechris {
+    background: radial-gradient(circle, rgb(204, 204, 204) 51%, rgb(154, 154, 154) 100%);
+    margin-left: 30%;
+    width: 250px;
+    min-width: 200px;
+    border-radius: 37% 63% 36% 64% / 47% 38% 62% 53%;
+}
+
+#plaatjechris:hover {
+    transform: scale(1.02);
+    transition: 0.3s;
+}
+
+/* bij kleine schermen, mijn hoofd en tekst naar links van scherm */
+@media only screen and (max-width: 800px) {
+    #plaatjechris {
+        margin-left: 0%;
+    }
+}
+
+#blauwetekst-opleiding {
+    font-family: "Poppins", sans-serif;
+    color: rgb(21, 123, 240);
+    font-weight: 100;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+}
+
+#projecten-knop {
+    text-decoration: none;
+    width: fit-content;
+    display: block;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+    border: none;
+    background-color: rgb(64, 99, 179);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    &:hover {
+        background-color: rgb(49, 71, 152);
+        transform: scale(1.03);
+    }
+}
+
+.tekst-blok-naast-hoofd {
+    margin-left: 2%;
+}
+
+h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(1.2rem, 2vw, 2rem);
+}
+
+#grijsvlak2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.064) 0%, rgba(255, 255, 255, 0.377) 15%, rgb(30, 33, 53) 100%);
+    margin: auto;
+    margin-top: 3%;
+    height: fit-content;
+    width: 100%;
+    padding-bottom: 20px;
+    padding-top: 40px;
+}
+
+#vaardigheden-container {
+    width: 80%;
+    margin: auto;
+}
+
+#vaardigheden-blok-boven {
+    flex-wrap: wrap;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#vaardigheden-blok-onder {
+    flex-wrap: wrap;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.vaardigheid {
+    flex-wrap: wrap;
+    transition: 0.3s;
+    border-radius: 10px;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.355);
+    margin: 10px;
+    flex-grow: 1;
+    padding: 30px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.735);
+        transform: scale(1.01);
+    }
+}
+
+.vaardigheid img {
+    width: 100px;
+    height: auto;
+}
+
+#over-mij-tekst {
+    text-align: center;
+    color: rgb(222, 222, 222);
+}
+
+#over-mij-tekst p {
+    font-size: clamp(0.9rem, 1.2vw, 1.4rem);
+}
