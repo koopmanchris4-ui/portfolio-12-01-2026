@@ -1,0 +1,63 @@
+body {
+    margin: 100px;
+    background-color: rgb(253, 253, 253);
+}
+
+/* container om foto's heen */
+
+.galerij {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-flow: dense;
+    gap: 10px;
+    padding: 10px;
+}
+
+/* plaatjes in galerij */
+
+.galerij img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1.5%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* plaatje, hover */
+
+.galerij img:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transform: scale(1.005);
+    transition: transform 0.3s ease;
+}
+
+.vierkant {
+    /* plaatje met class vierkant krijgt precies vierkante vorm*/
+    aspect-ratio: 1/1;
+}
+
+.rechthoek {
+    /* plaatje met class rechthoek krijgt precies rechthoekige vorm (liggend)*/
+
+    aspect-ratio: 2/1;
+    grid-column: span 2;
+}
+
+/* plaatje met class staand-rechthoek krijgt precies rechthoekige vorm (staand) */
+.staand-rechthoek {
+    aspect-ratio: 1/2;
+}
+
+/* bij klein scherm ga je van 4 grids naar 3 */
+@media only screen and (max-width: 1000px) {
+    .galerij {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* bij nog kleiner scherm ga je van 3 grids naar 2 */
+@media only screen and (max-width: 600px) {
+    .galerij {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

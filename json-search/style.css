@@ -1,0 +1,175 @@
+body {
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb, #fcd5ce);
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+    background-attachment: fixed;
+}
+
+input[type="text"] {
+    margin: auto;
+    display: block;
+    width: 100%;
+    height: 60px;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: clamp(1rem, 2.5vw, 1.8rem);
+    border: none;
+    padding: 0 60px 0 25px; /* ruimte voor X-knop rechts */
+    text-align: center;
+}
+
+input[type="text"]:hover {
+    transition: 0.3s;
+    background-color: #f2f8ff;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+}
+
+input::placeholder {
+    color: #b0b0b0;
+    font-size: clamp(0.9rem, 2vw, 1.5rem);
+    text-align: center;
+}
+
+#zoek-container {
+    position: relative;
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#searchInput {
+    flex: 1;
+    margin: 0;
+}
+
+#Xknop {
+    position: absolute;
+    right: 30px; /* helemaal rechts */
+    top: 10%;
+    transform: translateY(-50%);
+    font-size: 25px;
+    cursor: pointer;
+    color: rgb(156, 156, 156);
+    font-weight: 600;
+}
+
+#Xknop:hover {
+    color: rgb(48, 48, 48);
+    transition: 0.3s;
+}
+
+#zoekBtn {
+    margin: 20px auto 0 auto;
+    display: block;
+    height: 40px;
+    width: 80px;
+    border-radius: 10px;
+    border: none;
+    background-color: #6c98de;
+    color: white;
+    cursor: pointer;
+}
+
+#zoekBtn:hover {
+    background-color: #5578c2;
+    transition: 0.3s;
+}
+
+#resultaten {
+    width: 80%;
+    margin: 20px auto 0 auto;
+    font-size: 20px;
+    padding: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    text-align: center;
+}
+
+#resultaten li {
+    border-bottom: 1px solid rgb(143, 143, 143);
+    color: rgb(103, 103, 204);
+    padding: 40px;
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+#resultaten li:hover {
+    transition: 0.3s;
+    background-color: rgb(126, 144, 172);
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+h1 {
+    text-align: center;
+    padding: 40px;
+}
+
+.error {
+    color: rgb(245, 101, 101) !important;
+    font-weight: bold;
+}
+
+#container-om-alles {
+    margin-top: 10%;
+}
+
+.laadmeer-knop {
+    background-color: rgb(110, 173, 235);
+    width: 20%;
+    height: 50px;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+}
+
+.laadmeer-knop:hover {
+    background-color: #5578c2;
+    transform: scale(1.03);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#resultatenAantal {
+    text-align: center;
+}
+
+/*  MEDIAQUURIES voor telefoon scherm */
+
+@media only screen and (max-width: 600px) {
+    /* bij kleine schermen breedte van input groter, zodat te lezen op telefoons */
+    #zoek-container {
+        width: 100%;
+    }
+
+    /* ook bij telefoon de titel wat kleiner, want mooier */
+    h1 {
+        font-size: 25px;
+    }
+    /* alles iets naar beneden zodat onder geen groot vlak is op telefoon */
+    #container-om-alles {
+        margin-top: 40%;
+    }
+    /* text grootte kleiner op telefoons zodat cards kleiner worden (mooier) */
+    #resultaten {
+        font-size: 15px;
+    }
+}
+
+/* bij 800px, laadknop breder voor responsive */
+
+@media only screen and (max-width: 800px) {
+    .laadmeer-knop {
+        width: 70%;
+    }
+}

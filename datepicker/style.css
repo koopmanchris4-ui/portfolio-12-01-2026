@@ -1,0 +1,513 @@
+html {
+    overflow-y: scroll;
+}
+
+body {
+    background: radial-gradient(circle at center, #a2d2ff, #0277bd);
+    background-attachment: fixed;
+
+    font-family: "Poppins", sans-serif;
+}
+
+#input {
+    opacity: 1;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    width: 100%;
+    min-height: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    color: grey;
+    box-shadow: rgba(128, 128, 128, 0.35) 0px 5px 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+}
+
+#input.remove {
+    opacity: 0;
+    min-height: 0px;
+    margin: 0;
+    pointer-events: none;
+}
+
+#kalender {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s;
+    pointer-events: none;
+    margin: auto;
+    border-radius: 10px;
+    opacity: 0;
+    width: 90%;
+    overflow: hidden;
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.797);
+    font-size: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 0px;
+    margin-bottom: 0;
+}
+
+#kalender.show {
+    max-height: 1000px;
+    height: fit-content;
+    opacity: 1;
+    pointer-events: all;
+    margin-bottom: 20px;
+}
+
+#kalender .kalender-inner {
+    padding: 40px;
+}
+
+#pijl-container {
+    position: absolute;
+    right: 0;
+    gap: 10px;
+    display: flex;
+    cursor: pointer;
+}
+
+#kruisje:hover {
+    color: red;
+    transition: 0.2s;
+    font-weight: 600;
+}
+
+#omlaag:hover {
+    color: rgb(0, 132, 255);
+    text-shadow:
+        0.5px 0 0 currentColor,
+        -0.5px 0 0 currentColor,
+        0 0.5px 0 currentColor,
+        0 -0.5px 0 currentColor;
+    transition: 0.2s;
+    font-weight: 600;
+}
+
+#omhoog:hover {
+    color: rgb(0, 132, 255);
+    text-shadow:
+        0.5px 0 0 currentColor,
+        -0.5px 0 0 currentColor,
+        0 0.5px 0 currentColor,
+        0 -0.5px 0 currentColor;
+    transition: 0.2s;
+    font-weight: 600;
+}
+
+#kalender-header {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#maand-en-jaar-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#dagen-container {
+    opacity: 1;
+    transition: opacity 0.25s ease;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    height: 250px;
+}
+
+#dagen-container.fade {
+    opacity: 0;
+}
+
+.dag {
+    padding: 10px;
+    border-radius: 3px;
+    user-select: none;
+    align-items: center;
+}
+
+.dag-hover:hover {
+    color: rgb(18, 69, 255);
+    font-weight: 600;
+}
+.toegestaan {
+    color: black;
+    cursor: pointer;
+}
+
+.toegestaan:hover {
+    background-color: rgb(196, 219, 255);
+}
+
+.niet-toegestaan {
+    color: rgb(88, 88, 88);
+    opacity: 0.5;
+}
+
+#Reset-Localstorage {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    display: block;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-top: 20px;
+    border: none;
+    width: fit-content;
+    height: 40px;
+    background-color: rgb(142, 142, 142);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    box-shadow: rgba(128, 128, 128, 0.35) 0px 5px 15px;
+}
+
+#meer-beschikbaar {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    display: block;
+    opacity: 0;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-top: 20px;
+    border: none;
+    width: fit-content;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(109, 109, 109);
+    cursor: pointer;
+    box-shadow: rgba(128, 128, 128, 0.35) 0px 5px 15px;
+    pointer-events: none;
+}
+
+#meer-beschikbaar.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#meer-beschikbaar:hover {
+    background-color: #e2e2e2;
+    color: black;
+}
+
+.developermode {
+    background-color: #1e90ff !important;
+    color: white !important;
+    transform: scale(1.05);
+}
+
+#dagcheckboxes {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.2s;
+    transition:
+        max-height 0.3s ease,
+        opacity 0.3s ease;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    color: rgb(10, 131, 229);
+    position: absolute;
+    left: calc(50% + 300px);
+    background-color: #ffffffd4;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-bottom: 0;
+}
+
+#dagcheckboxes.show {
+    opacity: 1;
+    max-height: 500px;
+    pointer-events: auto;
+    margin-bottom: 20px;
+}
+
+#container-om-dagcheckboxes {
+    padding: 20px;
+}
+
+.custom-label {
+    border-radius: 2px;
+    margin-top: 20px;
+    display: block;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.custom-label:hover > input {
+    transform: scale(1.3);
+    transition: transform 0.2s;
+}
+
+#container-kalender-en-dag-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* kalender in het midden */
+    margin-top: 20px;
+}
+
+#dagnaam-container {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+}
+
+.dagnaam {
+    font-weight: 600;
+}
+
+.super-licht {
+    color: #d3d3d3 !important;
+}
+
+#maandtonen {
+    margin-right: 8px;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-weight: 800;
+}
+
+#afspraken-tabel {
+    background-color: rgba(255, 255, 255, 0.822);
+    border-radius: 20px;
+    margin: auto;
+    width: 80%;
+    min-width: 600px;
+    color: rgb(96, 96, 96);
+    text-align: center;
+    box-shadow: rgba(128, 128, 128, 0.35) 0px 5px 15px;
+    border-spacing: 0;
+}
+
+table th {
+    background-color: rgb(24, 71, 99);
+    color: white;
+    height: 50px;
+}
+
+table td {
+    height: 30px;
+    padding: 5px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* soepel scrollen op mobiel */
+    margin: auto;
+}
+
+.tabel-knop {
+    background-color: rgb(188, 59, 59);
+    border: none;
+    width: 20px;
+    height: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+/* mediaqueries */
+
+@media (max-width: 1000px) {
+    #container-kalender-en-dag-container {
+        flex-direction: column; /* stapel kalender en checkboxen */
+        align-items: center;
+    }
+    #dagcheckboxes {
+        position: relative; /* normaal in flow */
+        left: 0; /* geen verschuiving */
+        margin-top: 20px; /* wat ruimte boven */
+    }
+}
+
+@media (max-width: 600px) {
+    #kalender .kalender-inner {
+        min-width: none;
+        box-sizing: border-box;
+        padding: 20px;
+    }
+
+    #dagen-container {
+        grid-template-columns: repeat(7, minmax(20px, 1fr));
+    }
+
+    .dagnaam {
+        grid-template-columns: repeat(7, minmax(20px, 1fr));
+        font-size: 15px;
+    }
+
+    #maandtonen,
+    #jaartonen,
+    #omlaag,
+    #omhoog,
+    #kruisje {
+        font-size: 15px;
+    }
+}
+
+/* bij 800px of kleiner, tabel neemt hele scherm in */
+
+@media (max-width: 800px) {
+    table {
+        width: 100%;
+    }
+}
+
+/* ----------------------------------- User form styling */
+
+#inputveld,
+#inputveld2 {
+    border-radius: 5px;
+    outline: none;
+    min-height: 50px;
+    border: none;
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: rgba(128, 128, 128, 0.35) 0px 5px 15px;
+}
+#inputveld.remove,
+#inputveld2.remove {
+    opacity: 0;
+    height: 0;
+    min-height: 0; /* <-- belangrijk */
+    margin: 0;
+    padding: 0;
+    border: none;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+form {
+    margin-top: 5%;
+    background-color: rgba(255, 255, 255, 0.818);
+    border-radius: 20px;
+    width: 80%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+}
+
+.Afspraak-tekst {
+    color: rgb(122, 122, 122);
+    font-weight: normal;
+}
+
+#opslaanknop {
+    opacity: 1;
+    transition: 0.2s;
+    margin: auto;
+    width: 80%;
+    display: block;
+    border: none;
+    max-height: 40px;
+    height: 40px;
+    background-color: #65b1fd;
+    color: white;
+    border-radius: 50px;
+    box-shadow: rgba(128, 128, 128, 0.35) 0px 5px 15px;
+    cursor: pointer;
+}
+
+#opslaanknop.remove {
+    max-height: 0;
+    opacity: 0;
+}
+
+#opslaanknop:hover {
+    background-color: #5f97d0;
+    transform: scale(1.02);
+}
+
+#plaatje {
+    width: 70px;
+    margin: auto;
+    display: block;
+    display: none;
+}
+
+#tijdslots {
+    transition: 0.3s;
+    opacity: 0;
+    color: rgb(84, 84, 84);
+    margin: auto;
+    width: fit-content;
+}
+
+#tijdslots.show {
+    opacity: 1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#tekstarea textarea {
+    transition: 0.3s;
+    opacity: 1;
+    width: 100%;
+    min-height: 100px;
+    font-size: 20px;
+    border-radius: 8px;
+    border: none;
+    resize: none;
+    outline: none;
+    box-shadow: rgba(128, 128, 128, 0.35) 0px 5px 15px;
+}
+
+#tekstarea {
+    resize: none;
+    max-height: 300px;
+    transition:
+        opacity 0.3s,
+        max-height 0.3s;
+    overflow: hidden;
+}
+
+#tekstarea.remove {
+    opacity: 0;
+    max-height: 0;
+}
+
+#kleine-tekst {
+    text-align: center;
+    color: rgb(144, 144, 144);
+}
+
+/* media queries voor form user pagina */
+
+@media (max-width: 600px) {
+    /* bij kleine schermen, form meer in het midden */
+    form {
+        margin-top: 40% !important;
+    }
+}

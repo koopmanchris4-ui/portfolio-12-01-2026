@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+.galerij {
+  column-count: 15;          /* aantal kolommen */
+  column-gap: 1em;          /* ruimte tussen kolommen */
+  width: 5000px;               /* netjes in de pagina */
+}
+
+.galerij img {
+  width: 100%;              /* vult de kolom */
+  margin-bottom: 1em;
+  border-radius: 20px;
+  box-shadow: 1px 1px 20px grey;
+  display: block;
+}

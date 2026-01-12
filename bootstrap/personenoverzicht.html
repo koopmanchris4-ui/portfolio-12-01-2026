@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootsrap opdracht</title>
+
+    <style>
+        .container-cards {
+            margin-left: 6%;
+        }
+
+        #flex-container {
+            flex-direction: row
+        }
+
+
+        @media only screen and (max-width: 600px) {
+            #knopafmeld {
+                width: 5px;
+                margin-left: -3%;
+            }
+        }
+
+        #knopafmeld:hover {
+            background-color: #106cfc !important;
+            border: 0px !important;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<!-- bootstrap linkjes -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="afbeeldingen/ictcampuslogo.png" width="100" height="auto"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="personenoverzicht.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="personenlijst.html">Lijst</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">Afmelden</a>
+                    </li>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true" data-bs-backdrop="static">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Afmelden</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <form>
+                                            <div id="modaltext">Weet je zeker dat je wilt afmelden?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Annuleren</button>
+                                                <a class="btn btn-primary"
+                                                    href="https://www.youtube.com/watch?time_continue=1&v=xvFZjo5PgG0&embeds_referring_euri=https%3A%2F%2Fwww.bing.com%2F&embeds_referring_origin=https%3A%2F%2Fwww.bing.com&source_ve_path=Mjg2NjY"
+                                                    role="button">Afmelden</a>
+                                            </div>
+                                </div>
+                            </div>
+                </ul>
+                <!-- Element rechts van de navbar zetten -->
+                <img src="afbeeldingen/profile.jpg" alt="" class="ms-auto rounded-circle ms-3" width="35">
+            </div>
+        </div>
+    </nav>
+
+    <br>
+
+    <div class="container-fluid">
+        <div class="d-flex justify-content-between">
+            <h4> &nbsp Alle personen</h4>
+                <button type="button" class="btn btn-primary">+ Persoon toevoegen</button>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="container-cards">
+            <div class="row">
+                <div class="col-lg-2 x">
+
+                    <!-- kaart 1 -->
+
+                    <div class="card" style="width: 20rem;">
+                        <p class="card-title" style="background-color: lightgray;"><strong>Tante Truus</strong></p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex align-items-start">
+                                <span class="fw-semibold" style="width: 150px;">Voornaam:</span>
+                                <span>Tante</span>
+                            </li>
+                            <li class="list-group-item d-flex align-items-start">
+                                <span class="fw-semibold" style="width: 150px;">Achternaam:</span>
+                                <span>Truus</span>
+                            </li>
+                            <li class="list-group-item d-flex align-items-start">
+                                <span class="fw-semibold" style="width: 150px;">Telefoon:</span>
+                                <span>0624462445</span>
+                            </li>
+                            <li class="list-group-item d-flex align-items-start">
+                                <span class="fw-semibold" style="width: 150px;">E-mail:</span>
+                                <span>TanteTruus@gmail.com</span>
+                            </li>
+                            <li class="list-group-item"><button type="button"
+                                    class="btn btn-info d-grid gap-2 col-12 mx-auto">Toon persoon</button>
+                            </li>
+                    </div>
+                </div>
+                <br><br>
+
+                <div class="col-lg-2 x"></div>
+
+                <div class="col-lg-2 x">
+
+                    <!-- kaart 2 -->
+
+
+                    <div class="card" style="width: 20rem;">
+                        <p class="card-title" style="background-color: lightgray;"><strong>Will Smith</strong></p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex align-items-start">
+                                <span class="fw-semibold" style="width: 150px;">Voornaam:</span>
+                                <span>Will</span>
+                            </li>
+                            <li class="list-group-item d-flex align-items-start">
+                                <span class="fw-semibold" style="width: 150px;">Achternaam:</span>
+                                <span>Smith</span>
+                            </li>
+                            <li class="list-group-item d-flex align-items-start">
+                                <span class="fw-semibold" style="width: 150px;">Telefoon:</span>
+                                <span>06244678645</span>
+                            </li>
+                            <li class="list-group-item d-flex align-items-start">
+                                <span class="fw-semibold" style="width: 150px;">E-mail:</span>
+                                <span>WillSmith@gmail.com</span>
+                            </li>
+                            <li class="list-group-item"><button type="button"
+                                    class="btn btn-info d-grid gap-2 col-12 mx-auto">Toon persoon</button>
+                            </li>
+                    </div>
+                </div>
+
+
+                <br><br>
+
+                <div class="col-lg-2 x"></div>
+
+                <div class="col-lg-2 x">
+
+                    <div class="card" style="width: 20rem;">
+                        <p class="card-title" style="background-color: lightgray;"><strong>Justin Case</strong></p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex align-items-start">
+                                <span class="fw-semibold" style="width: 150px;">Voornaam:</span>
+                                <span>Justin</span>
+                            </li>
+                            <li class="list-group-item d-flex align-items-start">
+                                <span class="fw-semibold" style="width: 150px;">Achternaam:</span>
+                                <span>Case</span>
+                            </li>
+                            <li class="list-group-item d-flex align-items-start">
+                                <span class="fw-semibold" style="width: 150px;">Telefoon:</span>
+                                <span>0624589645</span>
+                            </li>
+                            <li class="list-group-item d-flex align-items-start">
+                                <span class="fw-semibold" style="width: 150px;">E-mail:</span>
+                                <span>justincase@gmail.com</span>
+                            </li>
+                            <li class="list-group-item"><button type="button"
+                                    class="btn btn-info d-grid gap-2 col-12 mx-auto">Toon persoon</button>
+                            </li>
+                    </div>
+                </div>
+</body>
+
+</html>

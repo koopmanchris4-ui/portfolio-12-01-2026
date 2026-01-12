@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paardenrace</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <style>
+        #Rand-om-paardenrace {
+            width: 1100px;
+            height: 625px;
+            border: 5px solid black;
+            background-color: rgba(146, 179, 174, 0.587);
+            box-shadow: 20px 20px 20px black;
+            position: relative;
+            margin-left: 10%;
+        }
+
+        #finish1 {
+            margin-left: 15%;
+            width: 20px;
+            height: 625px;
+            border: 1px solid black;
+        }
+
+        #finish2 {
+            margin-left: 750px;
+            width: 20px;
+            height: 625px;
+            border: 1px solid black;
+        }
+
+        body {
+            background-color: rgb(56, 109, 101);
+        }
+
+        #lijn1 {
+            height: 0%;
+            width: 100%;
+            position: absolute;
+            border: 3px solid black;
+            top: 125px;
+        }
+
+        #lijn2 {
+            height: 0%;
+            width: 100%;
+            position: absolute;
+            border: 3px solid black;
+            top: 250px;
+        }
+
+        #lijn3 {
+            height: 0%;
+            width: 100%;
+            position: absolute;
+            border: 3px solid black;
+            top: 375px;
+        }
+
+        #lijn4 {
+            height: 0%;
+            width: 100%;
+            position: absolute;
+            border: 3px solid black;
+            top: 500px;
+        }
+
+        #paard1 {
+            height: 15%;
+            width: 15%;
+            position: absolute;
+            margin-top: 4%;
+            z-index: 2;
+
+        }
+
+        #paard2 {
+            height: 15%;
+            width: 15%;
+            position: absolute;
+            margin-top: 14.5%;
+            z-index: 2;
+
+        }
+
+        #paard3 {
+            height: 15%;
+            width: 15%;
+            position: absolute;
+            margin-top: 26%;
+            z-index: 2;
+
+        }
+
+        #paard4 {
+            height: 15%;
+            width: 15%;
+            position: absolute;
+            margin-top: 37.5%;
+            z-index: 2;
+
+        }
+
+        #paard5 {
+            height: 18%;
+            width: 18%;
+            position: absolute;
+            margin-top: 49%;
+            z-index: 2;
+
+        }
+
+        #startgame {
+            width: 200px;
+            margin-left: 85%;
+            position: absolute;
+            margin-top: 15%;
+            z-index: 3;
+        }
+
+        #resetgame {
+            width: 200px;
+            margin-left: 85%;
+            position: absolute;
+            margin-top: 20%;
+            z-index: 3;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <button type="button" id="startgame" class="btn btn-dark">Start game</button>
+    <button type="button" id="resetgame" class="btn btn-dark" onClick="window.location.reload();">Reset game</button>
+
+    <div id="Rand-om-paardenrace">
+        <img id="paard1" src="afbeeldingen/horse 1 standing.png">
+        <div id="lijn1"></div>
+        <img id="paard2" src="afbeeldingen/horse 2 standing.png">
+        <div id="lijn2"></div>
+        <img id="paard3" src="afbeeldingen/horse 3 standing.png">
+        <div id="lijn3"></div>
+        <img id="paard4" src="afbeeldingen/horse 4 standing.png">
+        <div id="lijn4"></div>
+        <img id="paard5" src="afbeeldingen/horse 5 standing.png">
+        <img id="finish1" src="afbeeldingen/finishline.jpg">
+        <img id="finish2" src="afbeeldingen/finishline.jpg">
+    </div>
+    </div>
+
+
+    <!-- dit is Snelheid vanpaard random -->
+
+    <script>
+        var speed1 = randomSpeed(5000, 8000);
+        var speed2 = randomSpeed(5000, 8000);
+        var speed3 = randomSpeed(5000, 8000);
+        var speed4 = randomSpeed(5000, 8000);
+        var speed5 = randomSpeed(5000, 8000);
+
+
+        // dit bepaalt minimale snelheid (winsnelheid)
+
+        var winsnelheid = (Math.min(speed1, speed2, speed3, speed4, speed5));
+
+        var winnaar;
+
+        if (speed1 === winsnelheid) winner = 1;
+        else if (speed2 === winsnelheid) winner = 2;
+        else if (speed3 === winsnelheid) winner = 3;
+        else if (speed4 === winsnelheid) winner = 4;
+        else if (speed5 === winsnelheid) winner = 5;
+
+
+        //dit genereert random getal van paard snelheid
+
+
+        function randomSpeed(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        //paard 1 JQeury
+
+        $("#startgame").on("click", function () {
+            $('#paard1').attr('src', 'afbeeldingen/horse 1 running.gif');
+            $("#paard1").animate({
+                left: '85%'
+            }, speed1, function () {
+                $('#paard1').attr('src', 'afbeeldingen/horse 1 standing.png')
+
+
+                setTimeout(function () {
+                    if (winner === 1) alert("paard 1 heeft gewonnen");
+                }, 2500);
+            });
+        });
+
+
+        //paard 2 JQeury
+
+
+        $("#startgame").on("click", function () {
+            $('#paard2').attr('src', 'afbeeldingen/horse 2 running.gif');
+            $("#paard2").animate({
+                left: '85%'
+            }, speed2, function () {
+                $('#paard2').attr('src', 'afbeeldingen/horse 2 standing.png')
+
+
+                setTimeout(function () {
+                    if (winner === 2) alert("paard 2 heeft gewonnen");
+                }, 2500);
+            });
+        });
+
+
+        //paard 3 JQeury
+
+
+        $("#startgame").on("click", function () {
+            $('#paard3').attr('src', 'afbeeldingen/horse 3 running.gif');
+            $("#paard3").animate({
+                left: '85%'
+            }, speed3, function () {
+                $('#paard3').attr('src', 'afbeeldingen/horse 3 standing.png')
+
+
+                setTimeout(function () {
+                    if (winner === 3) alert("paard 3 heeft gewonnen");
+                }, 2500);
+            });
+        });
+
+        //paard 4 JQeury
+
+
+        $("#startgame").on("click", function () {
+            $('#paard4').attr('src', 'afbeeldingen/horse 4 running.gif');
+            $("#paard4").animate({ left: '85%' }, speed4, function () {
+                $('#paard4').attr('src', 'afbeeldingen/horse 4 standing.png')
+
+                setTimeout(function () {
+                    if (winner === 4) alert("paard 4 heeft gewonnen");
+                }, 2500);
+            });
+        });
+
+        //paard 5 JQeury
+
+
+
+        $("#startgame").on("click", function () {
+            $('#paard5').attr('src', 'afbeeldingen/running horse 5.gif');
+            $("#paard5").animate({
+                left: '85%'
+            }, speed5, function () {
+                $('#paard5').attr('src', 'afbeeldingen/horse 5 standing.png')
+
+                setTimeout(function () {
+                    if (winner === 5) alert("paard 5 heeft gewonnen");
+                }, 2500);
+            });
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>

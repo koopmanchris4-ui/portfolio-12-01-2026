@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalender User</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+        /* centreren van kalender in form */
+        #kalender {
+            box-sizing: border-box;
+            background-color: white;
+            max-height: 0;
+        }
+
+        #kalender.show {
+            max-height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="afspraak">
+
+        <h1 class="Afspraak-tekst">Maak een afspraak!</h1>
+        <p id="kleine-tekst"></p>
+
+        <input type="text" name="naam"  id="inputveld" placeholder="Voer uw naam in..." required>
+        <input type="email" name="email"  id="inputveld2" placeholder="Voer uw email-adres in..." required>
+
+
+        <div id="tekstarea"></div>
+
+
+        <input type="date" id="input">
+        <div id="kalender">
+            <div class="kalender-inner">
+                <div id="kalender-header">
+                    <div id="maand-en-jaar-container">
+                        <div id="maandtonen"></div>
+                        <div id="jaartonen"></div>
+                    </div>
+                    <div id="pijl-container">
+                        <div id="omlaag"><i class="bi bi-arrow-down" onclick="maandachteruit()"></i></div>
+                        <div id="omhoog"><i class="bi bi-arrow-up" onclick="maandvooruit()"></i></div>
+                    </div>
+
+                </div>
+                <div id="dagnaam-container">
+                    <div class="dagnaam">Ma</div>
+                    <div class="dagnaam">Di</div>
+                    <div class="dagnaam">Wo</div>
+                    <div class="dagnaam">Do</div>
+                    <div class="dagnaam">Vr</div>
+                    <div class="dagnaam">Za</div>
+                    <div class="dagnaam">Zo</div>
+                </div>
+                <div id="dagen-container"></div>
+            </div>
+        </div>
+
+        <div id="tijdslots"></div>
+
+        <img id="plaatje" src="plaatjes/check.png">
+
+        <button id="opslaanknop" onclick="maakafspraak()" name="opslaan">Ga verder</button>
+
+    </form>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

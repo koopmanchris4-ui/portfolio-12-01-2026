@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duckhunt project</title>
+
+    <style>
+body {
+    background-color: rgb(255, 143, 51)
+}
+
+        #game {
+            margin-top: 6%;
+            position: relative;
+            width: 800px;
+            height: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            overflow: hidden;
+            background-image: url("img/background2.png");
+            box-shadow: rgb(95, 54, 13) 20px 20px 20px;
+            background-size: cover;
+            border: 6px solid black;
+            cursor: url("img/crosshair2.png") 30 30, auto;
+        }
+
+        #grass {
+            width: 100%;
+            height: 100%;
+            display: inline;
+            position: absolute;
+            z-index: 1;
+        }
+
+        #duck {
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            z-index: 3;
+            left: -200px;
+
+        }
+
+        #dog {
+            display: inline;
+            position: absolute;
+            z-index: 2;
+            width: 145px;
+            height: 145px;
+            top: 270px;
+            left: -200px;
+        }
+
+        
+.myButton {
+    z-index: 4;
+    position: absolute;
+    left: 290px;
+    top: 190px;
+	box-shadow: 0px 1px 0px 0px #fff6af;
+	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+	background-color:#ffec64;
+	border-radius:6px;
+	border:1px solid #ffaa22;
+	display:inline-block;
+	cursor:pointer;
+	color:#333333;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:10px 70px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffee66;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+	background-color:#ffab23;
+}
+.myButton:active {
+    position: absolute;
+    left: 292px;
+    top: 192px;
+}
+
+#stats-div{
+    width: 200px;
+    height: 40px;
+    position: absolute;
+    padding: 10px;
+}
+    </style>
+</head>
+
+<body>
+    <div id="game">
+        <img id="duck" src='img/flyingduck.gif' onclick="duckhit()" />
+        <img id="grass" src="img/backgroundgrass.png" onclick="playGunshot()" />
+        <img id="dog" src="img/sniffingdog.gif" />
+
+        <div id="stats-div">
+            <div>Ducks hit: <span id="hit-text">0</span> </div>
+            <div>Ducks missed: <span id="missed-text">0</span> </div>
+
+
+        </div>
+
+        <div id="start-button" class='myButton' onclick="startGame();">START</div> 
+    </div>
+
+    <script>
+        var dogLeft = -200;
+        var duckLeft = -200;
+        var flyspeed = 16;
+        var duckTop = 0;
+        var duckInterval;
+        var fallInterval;
+        var hitcount = 0;
+        var missedcount = 0;
+        var duckSound = new Audio("sounds/duck.mp3");
+        var gunSound = new Audio("sounds/gunshot2.mp3");
+        var dog = document.getElementById("dog");
+        var duck = document.getElementById("duck");
+        var game = document.getElementById("game");
+        var startButton =document.getElementById("start-button");
+
+        function startGame(){
+            startButton.style.display = "none";
+            startDogWalk();
+            startDuckFly();
+
+        }
+
+        function updateHitMissedText(){
+            document.getElementById("hit-text").innerHTML = hitcount;
+            document.getElementById("missed-text").innerHTML = missedcount;
+
+        }
+
+        function duckhit(){
+            hitcount ++;
+            updateHitMissedText();
+            duck.src = "img/duckshot2.png";
+            clearInterval(duckInterval);
+            flyspeed += 3;
+            gunSound.play();
+
+
+            var fallSpeed = 3;
+            duck.style.zIndex = 1;
+
+            setTimeout(function() {
+                duck.src = "img/duckfalling.png";
+
+                fallInterval = setInterval(function(){
+                    duckTop += fallSpeed;
+                    duck.style.top = duckTop + "px";
+
+                    fallSpeed += 3;
+
+                    // check of we moeten stoppen met vallen
+                    if(duckTop > 2000) {
+                        clearInterval(fallInterval);
+                        startDuckFly();
+                    }
+                }, 100);
+
+            }, 800);
+        }
+
+        function playGunshot(){
+            gunSound.currentTime = 0;
+            gunSound.play();
+        }
+
+
+        function startDuckFly(){
+            duckLeft = -200;
+            duck.style.zIndex = 3;
+            duck.src = "img/flyingduck.gif";
+            duck.style.left = duckLeft + "px";
+            duckTop = Math.floor((Math.random() * 250) + 1);
+            duck.style.top = duckTop + "px";
+
+            duckInterval = setInterval(function(){
+                duckLeft += flyspeed;
+                duck.style.left = duckLeft + "px";
+
+                if(duckLeft % 300 == 0){
+                    duckSound.play();
+                }
+
+                //als duck uit scherm vliegt
+                if(duckLeft > game.offsetWidth){
+                    missedcount ++;
+                    updateHitMissedText();
+
+                    //reset de duck left position
+                    duckLeft = -200;
+                    duck.style.left = duckLeft + "px";
+
+                    // reset de duck top position
+            duckTop = Math.floor((Math.random() * 250) + 1);
+            duck.style.top = duckTop + "px";
+
+                }
+
+            },100);
+        }
+
+        function startDogWalk(){
+            dog.style.left = dogLeft;
+
+            setInterval(function () {
+                dogLeft += 6;
+                dog.style.left = dogLeft + "px";
+
+                //checken of hond buiten beeld is
+                if (dogLeft > game.offsetWidth) {
+                    dogLeft = -300;
+                }
+            }, 100);
+        }
+
+    </script>
+</body>
+
+</html>

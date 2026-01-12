@@ -1,0 +1,41 @@
+        body {
+            background-color: rgb(141, 180, 209);
+        }
+
+
+        #containeromplaatjes {
+            margin-top: 10%;
+            width: 100%;
+            height: 700px;
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            gap: 300px;
+            float: left;
+            cursor: grab;
+
+        }
+
+
+        #containerinner {
+            justify-content: space-around;
+            min-width: 100%;
+            position: absolute;
+            height: 300px;
+            display: flex;
+            float: left;
+        }
+
+        .plaatje {
+            width: 400px;
+            height: 400px;
+            margin: 30px;
+            user-select: none;
+            border-radius: 10px;
+
+        }
+
+        .plaatje:hover {
+            transform: scale(1.02);
+            transition: 0.3s ease;
+        }

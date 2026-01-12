@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vliegtuig Game</title>
+    <style>
+        #blokje {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+        }
+
+        #speelveld {
+            margin-left: 17%;
+            position: relative;
+            width: 1000px;
+            height: 530px;
+            border: 8px solid black;
+            overflow: hidden;
+            background-image: url("https://c02.purpledshub.com/uploads/sites/48/2023/02/why-sky-blue-2db86ae.jpg?w=1029&webp=1");
+            box-shadow: 30px 20px 30px rgb(4, 50, 78);
+
+        }
+
+
+        #arrowup {
+            margin-top: 1.7%;
+            margin-left: 35%;
+            width: 100px;
+            height: 100px;
+            border: 5px solid black;
+            background-color: white;
+            box-shadow: 10px 10px 10px black;
+        }
+
+        #arrowdown {
+            width: 100px;
+            height: 100px;
+            border: 5px solid black;
+            background-color: white;
+            box-shadow: 10px 10px 10px black;
+
+
+        }
+
+        #arrowright {
+            width: 100px;
+            height: 100px;
+            border: 5px solid black;
+            background-color: white;
+            box-shadow: 10px 10px 10px black;
+
+
+        }
+
+        #arrowleft {
+            width: 100px;
+            height: 100px;
+            border: 5px solid black;
+            background-color: white;
+            box-shadow: 10px 10px 10px black;
+        }
+
+        #container {
+            margin-top: 40px;
+        }
+
+        body {
+            background-color: rgb(8, 89, 136);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="speelveld">
+        <img src="plaatjes/plane_right.png" id="blokje">
+    </div>
+
+    <img src="plaatjes/arrow_up.png" id="arrowup" onclick="changeDirection('up')">
+
+    <img src="plaatjes/arrow_left.png" id="arrowleft" onclick="changeDirection('left')">
+    <img src="plaatjes/arrow_down.png" id="arrowright" onclick="changeDirection('down')">
+    <img src="plaatjes/arrow_right.png" id="arrowleft" onclick="changeDirection('right')">
+
+    </div>
+
+
+
+
+
+    <script>
+         document.body.addEventListener("keydown", function (e) {
+
+
+
+switch (event.key) {
+    case "ArrowUp":
+        changeDirection("up")
+    
+
+        break;
+    case "ArrowDown":
+    changeDirection("down")
+
+      
+
+        break;
+    case "ArrowLeft":
+    changeDirection("left")
+
+     
+
+        break;
+    case "ArrowRight":
+    changeDirection("right")
+
+       
+        break;
+
+
+
+
+}
+blokje.style.top = y + "px";
+blokje.style.left = x + "px";
+
+});
+
+
+        var direction = "right";
+
+        var xtop = 0;
+        var left = 0;
+        var speed = 3;
+        var blokje = document.getElementById("blokje");
+
+        function changeDirection(changeToDirection) {
+            direction = changeToDirection;
+        }
+
+        setInterval(function () {
+            switch (direction) {
+
+                case "right": {
+                    left += speed;
+                    blokje.style.left = left + "px";
+
+                    if (left > speelveld.offsetWidth) {
+                        left = -100;
+                    }
+                    blokje.style.transform = 'rotate(360deg)';
+
+                    break;
+                }
+
+                case "left": {
+                    left -= speed;
+                    blokje.style.left = left + "px";
+                    
+                    blokje.style.transform = 'rotate(180deg)';
+
+                    if (left < -100) {
+                        left = speelveld.offsetWidth
+
+
+                    }
+
+                    break;
+                }
+
+                case "up": {
+                    xtop -= speed;
+                    blokje.style.top = xtop + "px";
+
+                    if (xtop < -100) {
+                        xtop = speelveld.offsetHeight;
+                    }
+
+                    blokje.style.transform = 'rotate(270deg)';
+
+                    break;
+                }
+
+                case "down": {
+                    xtop += speed;
+                    blokje.style.top = xtop + "px";
+
+                    if (xtop > speelveld.offsetHeight) {
+                        xtop = -100;
+                    }
+
+                    blokje.style.transform = 'rotate(90deg)';
+
+
+                    break;
+                }
+            }
+        }, 20);
+
+
+
+
+    </script>
+</body>
+
+</html>

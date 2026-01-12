@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personenlijst</title>
+    <style>
+        .container-cards {
+            margin-left: 6%;
+        }
+
+        #flex-container {
+            flex-direction: row
+        }
+
+        #knop {
+            margin-left: 68%;
+        }
+
+        @media only screen and (max-width: 600px) {
+            #knop {
+                margin-left: 7%;
+            }
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="afbeeldingen/ictcampuslogo.png" width="100" height="auto"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="personenoverzicht.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="personenlijst.html">Lijst</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Afmelden</a> 
+                    </li>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true" data-bs-backdrop="static">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Afmelden</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <form>
+                                            <div id="modaltext">Weet je zeker dat je wilt afmelden?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Annuleren</button>
+                                                <a class="btn btn-primary"
+                                                    href="https://www.youtube.com/watch?time_continue=1&v=xvFZjo5PgG0&embeds_referring_euri=https%3A%2F%2Fwww.bing.com%2F&embeds_referring_origin=https%3A%2F%2Fwww.bing.com&source_ve_path=Mjg2NjY"
+                                                    role="button">Afmelden</a>
+                                            </div>
+                                </div>
+                            </div>
+                </ul>
+                <!-- Element rechts van de navbar zetten -->
+                <img src="afbeeldingen/profile.jpg" alt="" class="ms-auto rounded-circle ms-3" width="35">
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div>
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col" class="d-lg-none">Naam</th>
+                    <th scope="col" class="d-none d-lg-table-cell">Voornaam</th>
+                    <th scope="col" class="d-none d-lg-table-cell">Achternaam</th>
+                    <th scope="col" class="d-none d-lg-table-cell">Telefoon</th>
+                    <th scope="col" class="d-none d-lg-table-cell">E-mail</th>
+                    <th scope="col">Status</th>
+                    <th></th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    
+                    <td class="d-lg-none">Klaas Janssen</td>
+                    <td class="d-none d-lg-table-cell">Klaas</td>
+                    <td class="d-none d-lg-table-cell">Janssen</td>
+                    <td class="d-none d-lg-table-cell">064254356</td>
+                    <td class="d-none d-lg-table-cell">Klaas@janssen.nl	</td>
+                    <td ><i class="bi bi-patch-check-fill" style="color:green"></i></td>
+                    <td>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Opties
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Persoon wijzigen</a></li>
+                                <li><a class="dropdown-item" href="#">Persoon toevoegen</a></li>
+                                <li><a class="dropdown-item" href="#">Persoon notificatie sturen</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Persoon verwijderen</a></li>
+                            </ul>
+                        </div>
+                    </td>
+
+
+
+                </tr>
+                <tr>
+                    <td class="d-lg-none">Tante Truus</td>
+                    <td class="d-none d-lg-table-cell">Tante</td>
+                    <td class="d-none d-lg-table-cell">Truus</td>
+                    <td class="d-none d-lg-table-cell">064254335</td>
+                    <td class="d-none d-lg-table-cell">Tante@truus.nl</td>
+                    <td ><i class="bi bi-patch-check-fill" style="color:green"></i></td>
+                    <td>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Opties
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Persoon wijzigen</a></li>
+                                <li><a class="dropdown-item" href="#">Persoon toevoegen</a></li>
+                                <li><a class="dropdown-item" href="#">Persoon notificatie sturen</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Persoon verwijderen</a></li>
+                            </ul>
+                        </div>
+                    </td>
+
+
+                </tr>
+                <tr>
+                    <td class="d-lg-none">Will Smith</td>
+                    <td class="d-none d-lg-table-cell">Will</td>
+                    <td class="d-none d-lg-table-cell">Smith</td>
+                    <td class="d-none d-lg-table-cell">064654315</td>
+                    <td class="d-none d-lg-table-cell">Willsmith@gmail.com</td>
+                    <td ><i class="bi bi-patch-check-fill" style="color:green"></i></td>
+                    <td>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Opties
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Persoon wijzigen</a></li>
+                                <li><a class="dropdown-item" href="#">Persoon toevoegen</a></li>
+                                <li><a class="dropdown-item" href="#">Persoon notificatie sturen</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Persoon verwijderen</a></li>
+                            </ul>
+                        </div>
+                    </td>
+
+
+                </tr>
+                <tr>
+                    <td class="d-lg-none">Corrie Konings</td>
+                    <td class="d-none d-lg-table-cell">Corrie</td>
+                    <td class="d-none d-lg-table-cell">Konings</td>
+                    <td class="d-none d-lg-table-cell">062454675</td>
+                    <td class="d-none d-lg-table-cell">Corrie@konings.nl</td>
+                    <td ><i class="bi bi-patch-minus-fill" style="color: red"></i></td>
+                    <td>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Opties
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Persoon wijzigen</a></li>
+                                <li><a class="dropdown-item" href="#">Persoon toevoegen</a></li>
+                                <li><a class="dropdown-item" href="#">Persoon notificatie sturen</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Persoon verwijderen</a></li>
+                            </ul>
+                        </div>
+                    </td>
+
+
+                </tr>
+                <tr>
+                    <td class="d-lg-none">Freek Vonk</td>
+                    <td class="d-none d-lg-table-cell">Freek</td>
+                    <td class="d-none d-lg-table-cell">Vonk</td>
+                    <td class="d-none d-lg-table-cell">064153336</td>
+                    <td class="d-none d-lg-table-cell">Freek@vonk.nl</td>
+                    <td ><i class="bi bi-patch-minus-fill" style="color: red"></i></td>
+                </td>
+                    <td>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Opties
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Persoon wijzigen</a></li>
+                                <li><a class="dropdown-item" href="#">Persoon toevoegen</a></li>
+                                <li><a class="dropdown-item" href="#">Persoon notificatie sturen</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Persoon verwijderen</a></li>
+                            </ul>
+                        </div>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>

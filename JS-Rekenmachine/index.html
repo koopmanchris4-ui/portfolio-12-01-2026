@@ -1,0 +1,71 @@
+<!-- TODO:  -->
+<!-- ans bij undefined weghalen -->
+<!-- bovenste knoppen werkend maken -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Rekenmachine van Chris</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="rand-rekenmachine">
+        <input id="schermpje" readonly disabled></input>
+        <div id="rand-knoppen">
+
+            <button onclick="Shift()" class="knopboven">Shift</button>
+            <button onclick="Naardisplay('-')" class="knopboven">(-)</button>
+            <button onclick="Naardisplay('In(')" class="knopboven">In</button>
+            <button onclick="Naardisplay('x³')" class="knopboven">x³</button>
+            <button onclick="Naardisplay('e')" class="knopboven">e</button>
+
+
+
+            <button onclick="Naardisplay('cos(')" class="knopboven" id="cos">cos</button>
+            <button onclick="Naardisplay('sin(')" class="knopboven" id="sin">sin</button>
+            <button onclick="Naardisplay('tan(')" class="knopboven" id="tan">tan</button>
+            <button onclick="Naardisplay('log(')" class="knopboven">log</button>
+            <button onclick="Naardisplay('^')" class="knopboven">^</button>
+
+            <button onclick="Naardisplay('√')" class="knopboven">√</button>
+            <button onclick="Naardisplay('x²')" class="knopboven">x²</button>
+            <button onclick="Naardisplay('%')" class="knopboven">%</button>
+            <button onclick="Naardisplay('(')" class="knopboven">(</button>
+            <button onclick="Naardisplay(')')" class="knopboven">)</button>
+
+            <button onclick="Naardisplay('7')" class="knop" id="7">7</button>
+            <button onclick="Naardisplay('8')" class="knop" id="8">8</button>
+            <button onclick="Naardisplay('9')" class="knop" id="9">9</button>
+            <button onclick="Backspace('')" class="knop" id="DEL">DEL</button>
+            <button onclick="Cleardisplay('')" class="knop" id="AC">AC</button>
+
+            <button onclick="Naardisplay('4')" class="knop" id="4">4</button>
+            <button onclick="Naardisplay('5')" class="knop" id="5">5</button>
+            <button onclick="Naardisplay('6')" class="knop" id="6">6</button>
+            <button onclick="Naardisplay('*')" class="knop" id="X">X</button>
+            <button onclick="Naardisplay('/')" class="knop" id=":">:</button>
+
+            <button onclick="Naardisplay('1')" class="knop" id="1">1</button>
+            <button onclick="Naardisplay('2')" class="knop" id="2">2</button>
+            <button onclick="Naardisplay('3')" class="knop" id="3">3</button>
+            <button onclick="Naardisplay('+')" class="knop" id="+">+</button>
+            <button onclick="Naardisplay('-')" class="knop" id="-">-</button>
+
+            <button onclick="Naardisplay('0')" class="knop" id="0">0</button>
+            <button onclick="Naardisplay('.')" class="knop" id=".">.</button>
+            <button onclick="Naardisplay('π')" class="knop" id="pi">π</button>
+            <button onclick="ANS()" class="knop" id="Ans">Ans</button>
+            <button onclick="Uitrekenen('7')" class="knop" id="=">=</button>
+
+        </div>
+    </div>
+</body>
+
+<script src="script.js"></script>
+
+</html>
