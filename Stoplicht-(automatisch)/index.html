@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automatisch stoplicht</title>
+
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+
+  <div id="stoplichtbox">
+    <div id="rondjerood1"></div>
+    <div id="rondjegeel1"></div>
+    <div id="rondjegroen1"></div>
+    <div id="paal1"></div>
+  </div>
+
+  <div id="stoplichtbox2">
+    <div id="rondjerood2"></div>
+    <div id="rondjegeel2"></div>
+    <div id="rondjegroen2"></div>
+    <div id="paal2"></div>
+  </div>
+
+  <script>
+    var light = "red";
+    var light2 = "green";
+
+    function displayLight() {
+      if (light == "red") {
+        setTimeout(function () {
+          light = "green";
+          document.getElementById("rondjerood1").style.backgroundColor = "rgb(136, 24, 24)";
+          document.getElementById("rondjegroen1").style.backgroundColor = "green";
+          displayLight();
+        }, 4000);
+
+      }
+
+      if (light == "green") {
+        setTimeout(function () {
+          light = "orange";
+          document.getElementById("rondjegroen1").style.backgroundColor = "rgb(10, 64, 10)";
+          document.getElementById("rondjegeel1").style.backgroundColor = "orange";
+          displayLight();
+        }, 3000);
+      }
+
+      if (light == "orange") {
+        setTimeout(function () {
+          light = "red";
+          document.getElementById("rondjegeel1").style.backgroundColor = "rgb(109, 76, 14)";
+          document.getElementById("rondjerood1").style.backgroundColor = "red";
+          displayLight();
+        }, 3000);
+      }
+    }
+
+    displayLight();
+
+    function displayLight2() {
+      if (light2 == "red") {
+        setTimeout(function () {
+          light2 = "green";
+          document.getElementById("rondjerood2").style.backgroundColor = "rgb(136, 24, 24)";
+          document.getElementById("rondjegroen2").style.backgroundColor = "green";
+          displayLight2();
+        }, 4000);
+
+      }
+
+      if (light2 == "green") {
+        setTimeout(function () {
+          light2 = "orange";
+          document.getElementById("rondjegroen2").style.backgroundColor = "rgb(10, 64, 10)";
+          document.getElementById("rondjegeel2").style.backgroundColor = "orange";
+          displayLight2();
+        }, 3000);
+      }
+
+      if (light2 == "orange") {
+        setTimeout(function () {
+          light2 = "red";
+          document.getElementById("rondjegeel2").style.backgroundColor = "rgb(109, 76, 14)";
+          document.getElementById("rondjerood2").style.backgroundColor = "red";
+          displayLight2();
+        }, 3000);
+      }
+    }
+
+    displayLight2();
+
+
+
+
+
+  </script>
+
+
+
+
+
+</body>
+
+</html>

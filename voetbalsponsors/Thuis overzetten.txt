@@ -1,0 +1,28 @@
+Project is in POSTGRE. 
+zet alles php help bestanden over naar SQL  + zet alle tabellen en database over naar localhost
+
+. Later thuis overzetten voor eigen lokale server en niet postGRE 
+
+
+<!-- database = POSTGRE -->
+<!-- database naam = internshipretonldb -->
+<!-- database heeft: tabellen: plattegrond_met_sponsors_chris_koopman_verdiepingen & plattegrond_met_sponsors_chris_koopman_sponsors -->
+
+
+<!-- plattegrond_met_sponsors_chris_koopman_sponsors -->
+
+<!-- id (INT primary, AI)-->
+<!-- verdieping (INT) -->
+<!-- zijde (VARCHAR)-->
+<!-- positie (INT)-->
+<!-- eindtijd (DATE)-->
+<!-- secties (INT)-->
+<!-- kleur (VARCHAR) -->
+<!-- naam (VARCHAR)-->
+
+
+<!-- plattegrond_met_sponsors_chris_koopman_verdiepingen -->
+ 
+<!-- verdieping_nummer (INT primary)-->
+<!-- achtergrond (VARCHAR) -->
+<!-- boventitel (VARCHAR)-->

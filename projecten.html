@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projecten</title>
+
+    <!-- letters -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="Favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="Favicon/favicon.svg" />
+    <link rel="shortcut icon" href="Favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="Faviocn/apple-touch-icon.png" />
+    <link rel="manifest" href="Favicon/site.webmanifest" />
+    <link rel="stylesheet" href="assets/css/style-projecten.css">
+
+
+
+    <!-- alvast thema maken boven CSS en HTML, zodat geen flits (omdat JS onderaan nog moet inladen) -->
+    <script src="assets/js/bovenscript.js"></script>
+
+</head>
+
+<body>
+    <div class="fixed-background"></div>
+    <div id="navbar-container">
+        <nav class="navbar">
+            <div id="navbar-titel"><b>Portfolio Chris Koopman</b></div>
+            <ul>
+                <li><a href="index.html"><b>Over</b></a></li>
+                <li><a class="navbar-active"><b>Projecten</b></a></li>
+                <li><a href="contact.html"><b>Contact</b></a></li>
+                <li><a href="cv.html"><b>CV</b></a></li>
+                <li onclick="anderThema()"><a id="anderthema" href="#"><b>☀️</b></a></li>
+            </ul>
+
+            <img id="hamburger-btn" class="hamburger-btn" src="assets/Afbeeldingen/navbarmenu.png"><img>
+        </nav>
+    </div>
+
+
+
+    <div id="achtergrondkleurdiv">
+
+        <div id="sorteerknopcontainer">
+            <button id="sorteerknop-alles">All</button>
+            <button id="sorteerknop-jaar1">Jaar 1</button>
+            <button id="sorteerknop-jaar2">Jaar 2</button>
+        </div>
+        <div id="projecten-container">
+            <div class="Project jaar1">
+                <b>Project 1</b>
+                <p>CSS Vlaggen (Jaar 1)</p>
+                <img class="Projectplaatje" src="assets/Afbeeldingen/nedbel.png">
+                <p class="project-beschrijving">In dit project moest ik M.B.V CSS 5 verschillende vlaggen maken. Zo heb
+                    de
+                    vlaggen van Nederland,
+                    België, Zwitserland, Japan en Rusland gemaakt. Dit was mijn eerste project met CSS en HTML, dus neem
+                    een
+                    kijkje!</p>
+                <a href="koppelingen/Vlaggen/Index.html" class="button">naar site</a>
+            </div>
+
+            <div class="Project jaar1">
+                <b>Project 2</b>
+                <p>CSS Pixelart (Jaar 1)</p>
+                <img class="Projectplaatje" src="assets/Afbeeldingen/plaatjepixelart.png">
+                <p class="project-beschrijving">In dit project moest ik een pixel art maken m.b.v CSS, zoals u ziet heb
+                    ik
+                    een 32x 32 pixel art van Cartman uit Southpark gemaakt. Een leuk project als je het mij vraagt!</p>
+                <a href="koppelingen/Pixel-Art/index.html" class="button">naar site</a>
+            </div>
+
+            <div class="Project jaar1">
+                <b>Project 3</b>
+                <p>Netwerkbegrippen (Jaar 1)</p>
+                <img class="Projectplaatje" src="assets/Afbeeldingen/plaatjenetwerkbegrip.png">
+                <p class="project-beschrijving">In dit project moest ik een webpagina maken waarbij ik verschillende
+                    netwerkbegrippen uitleg aan de doelgroep, derde jaars. Een erg leerzame opdracht dus!</p>
+                <a href="koppelingen/netwerkbegrippen/index.html" class="button">naar site</a>
+            </div>
+
+            <div class="Project jaar1">
+                <b>Project 4</b>
+                <p>JS Piano (Jaar 1)</p>
+                <img class="Projectplaatje" src="assets/Afbeeldingen/plaatjepiano.png">
+                <p class="project-beschrijving">In dit project moest ik een Javascript piano maken. Met CSS heb ik een
+                    mooi ontwerp gemaakt waarbij ik uiteindelijk piano geluidjes inzette met Javascript. Ik ben erg
+                    trots op dit resultaat en heb hiermee veel over Javascript geleerd.</p>
+                <a href="koppelingen/piano/index.html" class="button">naar site</a>
+            </div>
+
+
+            <div class="Project jaar1">
+                <b>Project 5</b>
+                <p>JS Stoplichten (Jaar 1)</p>
+                <img class="Projectplaatje" src="assets/Afbeeldingen/plaatjestoplicht1.png">
+                <p class="project-beschrijving">In dit project moest ik een paar CSS stoplichten maken die met behulp
+                    van
+                    Javascript van kleur verwisselen. Het is me gelukt en ben erg trots op het resultaat. Met deze
+                    opdracht
+                    heb ik veel geleerd over Javascript functions!</p>
+                <a href="koppelingen/Stoplicht-(automatisch)/index.html" class="button">naar site</a>
+            </div>
+
+            <div class="Project jaar1">
+                <b>Project 6</b>
+                <p>JS Gamecontroller (Jaar 1)</p>
+                <img class="Projectplaatje" src="assets/Afbeeldingen/plaatjegamecontroller.png">
+                <p class="project-beschrijving">In dit project moest ik een gamecontroller maken met behulp van
+                    Javascript
+                    en CSS. Zo kan het vliegtuigje zowel bewegen met de pijltjes op het scherm als de pijltjes toetsen
+                    op
+                    het toetsenbord.</p>
+                <a href="koppelingen/gamecontroller/index.html" class="button">naar site</a>
+            </div>
+
+            <div class="Project jaar1">
+                <b>Project 7</b>
+                <p>JS Duckhunt (Jaar 1)</p>
+                <img class="Projectplaatje" src="assets/Afbeeldingen/plaatjeduckhunt.png">
+                <p class="project-beschrijving">In dit project moest ik Duck Hunt namaken met behulp van Javascript en
+                    CSS.
+                    Dit is mijn 2de Javascript game en ik ben erg trots op het resultaat! Neem een een kijkje en speel
+                    mijn
+                    versie van Duck Hunt!</p>
+                <a href="koppelingen/duckhunt/index.html" class="button">naar site</a>
+            </div>
+
+            <div class="Project jaar1">
+                <b>Project 8</b>
+                <p>Bootstrap Site (Jaar 1)</p>
+                <img class="Projectplaatje" src="assets/Afbeeldingen/plaatjebootstrap.png">
+                <p class="project-beschrijving">In dit project moest ik met behulp van een voorbeeld de layout van een
+                    site
+                    nabootsen. Zoals u kunt zien heb ik hiervoor boostrap gebruikt. Hoewel de site niet functioneel is,
+                    ben
+                    ik toch trots op het resultaat.</p>
+                <a href="koppelingen/bootstrap/personenlijst.html" class="button">naar site</a>
+            </div>
+
+            <div class="Project jaar1">
+                <b>Project 9</b>
+                <p>PHP Blogsite (Jaar 1)</p>
+                <img class="Projectplaatje" src="assets/Afbeeldingen/plaatjeblogsite.png">
+                <p class="project-beschrijving">In dit project was mijn opdracht om een blogsite te maken met PHP. Ik
+                    heb
+                    hiervoor een crud system moeten gebruiken om de blogtekst, id, titel en blogdatum op te slaan en
+                    weer te
+                    geven op de site. Ik vind de site er strak uitzien en ben erg tevreden met het resultaat.</p>
+                <a href="koppelingen/PHP-blogsite/" class="button">naar site</a>
+            </div>
+
+
+            <div class="Project jaar1">
+                <b>Project 10</b>
+                <p>Jquery Paardenrace (Jaar 1)</p>
+                <img class="Projectplaatje" src="assets/Afbeeldingen/plaatjepaardenrace.png">
+                <p class="project-beschrijving">Bij deze opdracht kreeg ik de taak een JQeury paardenrace site te maken.
+                    Met
+                    CSS en Jqeury (Javascript) is dit mij gelukt. Ik heb veel geleerd over de de werking en functies van
+                    Jqeury. Neem een kijkje!</p>
+                <a href="koppelingen/paardenrace/Eindopdracht.html" class="button">naar site</a>
+            </div>
+
+            <div class="Project jaar1">
+                <b>Project 11</b>
+                <p>PHP Game Collectie (Jaar 1)</p>
+                <img class="Projectplaatje" src="assets/Afbeeldingen/crudgames.png">
+                <p class="project-beschrijving">In deze opdracht kreeg ik de taak een site te maken met PHP CRUD. De
+                    site dient als archief voor mijn games. Kortom, een PHP Game Collectiesite. Met dit project heb ik
+                    geleerd de Delete en Edit elementen van CRUD te gebruiken. Het is goed gelukt en ben dus erg blij
+                    met het resultaat!</p>
+                <a href="koppelingen/crudgames/" class="button">naar site</a>
+            </div>
+
+            <div class="Project jaar2">
+                <b>Project 12</b>
+                <p>Uitgelijnde vormen galerij (Jaar 2)</p>
+                <img class="Projectplaatje" src="assets/Afbeeldingen/Galerij.png">
+                <p class="project-beschrijving">Dit was mijn eerste opdracht op mijn stage. Ik heb met behulp van
+                    Javascript en CSS een galerij gemaakt die altijd mooi bijft meebewegen! Ongeacht welk plaatje je
+                    erbij doet, blijft hij de toegevoegde afbeelding een vierkante of rechthoekige vorm geven zodat de
+                    galerij ongelijk is, maar toch niet rommelig is. Neem een kijkje!</p>
+                <a href="koppelingen/Galerij/index.html" class="button">naar site</a>
+            </div>
+
+            <div class="Project jaar2">
+                <b>Project 13</b>
+                <p>Visueel Ontwerp Bing (Jaar 2)</p>
+                <img class="Projectplaatje" src="assets/Afbeeldingen/plaatjebing.png">
+                <p class="project-beschrijving">Dit was de tweede opdracht die ik kreeg op mijn stage, om mijn CSS
+                    vaardigheden te bewijzen en te pushen. De opdracht was om Microsoft Bing na te maken. Hoewel niets
+                    dus functioneert ben ik erg trots op het bijna identieke resultaat!</p>
+                <a href="koppelingen/bingsite/index.html" class="button">naar site</a>
+            </div>
+
+            <div class="Project jaar2">
+                <b>Project 14</b>
+                <p>Automatische Foto Slideshow (Jaar 2)</p>
+                <img class="Projectplaatje" src="assets/Afbeeldingen/plaatjeslideshow.png">
+                <p class="project-beschrijving">In dit project moest ik van mijn stagebedrijf een automatische slideshow
+                    maken die altijd op een nette manier moet bewegen, ongeacht de hoeveelheid afbeeldingen. Het was een
+                    erg uitdagende opdracht, maar met behulp van Javascript is het mij gelukt! Ook kunt u de slideshow
+                    bewegen naar de gewenste kant. Neem gerust een kijkje!</p>
+                <a href="koppelingen/foto-slideshow/index.html" class="button">naar site</a>
+            </div>
+
+            <div class="Project jaar2">
+                <b>Project 15</b>
+                <p>JS Rekenmachine (Jaar 2)</p>
+                <img class="Projectplaatje" src="assets/Afbeeldingen/rekenmach.png"><br>
+                <p class="project-beschrijving">In dit project heb ik met behulp van Javascript en CSS een rekenmachine
+                    gemaakt, gebaseerd op mij eigen CASIO rekenmachine. Het was een leuke opdracht om mijn kennis van
+                    Javascript op te frissen. Probeer hem uit!</p>
+                <a href="koppelingen/JS-Rekenmachine/index.html" class="button">naar site</a>
+            </div>
+
+            <div class="Project jaar2">
+                <b>Project 16</b>
+                <p>Bewegende Foto Galerij (Jaar 2)</p>
+                <img class="Projectplaatje" src="assets/Afbeeldingen/plaatjebounce.png">
+                <p class="project-beschrijving">In dit project moest ik een fotogalerij maken die van links naar rechts
+                    en van boven naar onder beweegt, wanneer hij een rand aanraakt moet hij de andere kant opgaan als
+                    een soort 90s DVD savescreen effect. Daanraast heb ik de laatste 300 foto's gebruikt van Pexels.com
+                    met hulp van hun API. Een erg uitdagende Javascript opdracht, maar ik ben trots op het resultaat!
+                </p>
+                <a href="koppelingen/bounce-plaatjes/index.html" class="button">naar site</a>
+            </div>
+
+            <div class="Project jaar2">
+                <b>Project 17</b>
+                <p>JSON Search (Jaar 2)</p>
+                <img class="Projectplaatje" src="assets/Afbeeldingen/plaatje-json-search.png">
+                <p class="project-beschrijving">In dit project heb ik met behulp van Javascript, CSS en een gigantisch
+                    Json bestand een search website gemaakt. Je kan zoeken op de titel van prodcuten, maar ook eventuele
+                    beschrijvingen, tags en suppliers. Ook met kleine typfoutjes blijft hij mooi doorwerken. Wederom een
+                    leuk en nuttig project voor het ontwikkelen van mijn Javascript kennis!
+                </p>
+                <a href="koppelingen/json-search/index.html" class="button">naar site</a>
+            </div>
+
+            <div class="Project jaar2">
+                <b>Project 18</b>
+                <p>API Weersite (Jaar 2)</p>
+                <img class="Projectplaatje" src="assets/Afbeeldingen/plaatjeweer.png">
+                <p class="project-beschrijving">In dit project moest ik een weerapplicatie maken met locatieherkenning.
+                    Zo moest ik een API gebruiken om het weer van nu en de komende week te fetchen. Hij werkt zowel op
+                    de locatie van de gebruiker als op ingevoerde locatie. Neem een kijkje en probeer het uit!
+                </p>
+                <a href="koppelingen/weer-app/index.html" class="button">naar site</a>
+            </div>
+
+            <div class="Project jaar2">
+                <b>Project 19</b>
+                <p>JS timersite (Jaar 2)</p>
+                <img class="Projectplaatje" src="assets/Afbeeldingen/plaatje-timer.png">
+                <p class="project-beschrijving">In dit project moest ik een timer maken met Javascript. Hij heeft
+                    meerdere functies, zo heeft hij geluidjes, een pauzeknop en een progressiebalk. Ik ben trots op het
+                    resultaat en vind hem er mooi uitzien, voel u vrijom het te bekijken!
+                </p>
+                <a href="koppelingen/timer/index.html" class="button">naar site</a>
+            </div>
+
+            <div class="Project jaar2">
+                <b>Project 20</b>
+                <p>JS Datepicker (Jaar 2)</p>
+                <img class="Projectplaatje" src="assets/Afbeeldingen/plaatjedatepicker1.png">
+                <p class="project-beschrijving">In dit project moest ik een kalender maken. Daarbij heb ik een developer
+                    pagina en een user pagina gemaakt om te oefenen met de localStorage. In de developer pagina kan je
+                    datums aan/uitzetten voor de gebruiker. Ook kan je hier afspraken uitlezen indien die zijn
+                    aangemaakt. Ik ben er lang mee bezig geweest en trots dit te tonen! Neem een kijkje!
+                </p>
+                <div id="meer-knop-container">
+                    <a href="koppelingen/datepicker/user.html" class="button-blauw">user site</a>
+                    <a href="koppelingen/datepicker/developer.html" class="button-grijs">developer site</a>
+                </div>
+            </div>
+            <div class="Project jaar2">
+                <b>Project 21</b>
+                <p>JS / PHP Sponsorplattegrond Generator (jaar 2)</p>
+                <img class="Projectplaatje" src="assets/Afbeeldingen/plaatjevoetbalsponsors.png">
+                <p class="project-beschrijving">In dit project kan je een stadionplattegrond met
+                    meerdere verdiepingen beheren. Per verdieping kunnen sponsors worden
+                    aangemaakt, aangepast en verwijderd. Sponsors hebben een naam, kleur en einddatum, waarbij verlopen
+                    sponsors automatisch rood worden gemarkeerd en alle gegevens centraal in een database worden opgeslagen.
+                </p>
+                    <a href="koppelingen/voetbalsponsors/" class="button">naar site</a>
+            </div>
+        </div>
+        <script src="assets/js/script.js"></script>
+
+</html>

@@ -1,0 +1,224 @@
+
+body {
+    background: linear-gradient(to bottom, #3779ca, #7aabfb, #e8faff);
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+body.nacht {
+    background: linear-gradient(to bottom, #032e58, #051a2c);
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+input[type="text"] {
+    width: 50%;
+    margin: auto;
+    display: block;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height: 40px;
+    border-radius: 20px;
+    text-align: center;
+    border: none;
+    outline: none;
+}
+
+input[type="text"]:hover {
+    background-color: #e0ebf9;
+    transition: 0.3s;
+    transform: scale(1.01);
+}
+
+.nacht::placeholder {
+    color: rgba(255, 255, 255, 1);
+}
+
+#weerresultaat,
+#meerdere-resultaten {
+    margin: auto;
+    background-color: rgb(154, 203, 255);
+    text-align: center;
+    width: 50%;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 20px;
+}
+
+#weerresultaat {
+    display: none;
+    transition: 0.3s;
+}
+
+#meerdere-resultaten {
+    display: none;
+}
+
+h2 {
+    color: rgb(45, 115, 185);
+}
+
+#opslaan-knop,
+#verander {
+    border: none;
+    background-color: #8bbaf0;
+    color: rgb(255, 255, 255);
+    width: 10%;
+    height: 30px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 30px;
+    cursor: pointer;
+}
+
+#opslaan-knop:hover,
+#verander:hover {
+    background-color: #5a9bea;
+    transition: 0.2s;
+    transform: scale(1.05);
+    color: white;
+}
+
+#button-container {
+    margin: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.meer-resultaten-knop {
+    margin: 5px;
+    border: none;
+    background-color: #8bbaf0;
+    color: rgb(255, 255, 255);
+    width: fit-content;
+    height: 30px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
+    cursor: pointer;
+}
+
+body.nacht .meer-resultaten-knop {
+     background-color: rgba(82, 98, 132, 0.9);
+  color: #fff;
+  /* optioneel */
+  border: none;
+}
+
+body.nacht h2 {
+  color: #fff;
+}
+
+
+
+
+
+.meer-resultaten-knop:hover {
+    background-color: #347fda;
+    transition: 0.3s;
+    transform: scale(1.02);
+}
+
+#weerresultaat-specifieke-dag {
+    display: none;
+    text-align: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    width: 50%;
+    background-color: rgba(154, 203, 255);
+    border-radius: 20px;
+    margin: 20px auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 20px;
+}
+
+#weerresultaat-specifieke-dag img {
+    height: 50px;
+    width: 50px;
+}
+
+p {
+    font-size: 22px;
+    line-height: 1.5;
+    color: white;
+}
+
+#toggleMeerdaagsBtn {
+    margin: auto;
+    width: 300px;
+    display: none;
+    padding: 20px;
+    border: none;
+    background-color: #8bbaf0;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#toggleMeerdaagsBtn:hover {
+    background-color: #5a9bea;
+    transition: 0.3s;
+    transform: scale(1.05);
+}
+
+.lijn {
+    border: 2px solid #85aae5ff;
+}
+
+
+b {
+    font-size: 25px;
+}
+
+#stadNaam {
+    color: white;
+    text-align: center;
+}
+
+/* MEDIAQUEIRES VOOR RESPONSIVE DESIGN */
+
+@media only screen and (max-width: 900px) {
+    input[type="text"] {
+        width: 80%;
+    }
+    #weerresultaat-specifieke-dag,
+    #weerresultaat {
+        width: 90%;
+    }
+
+    #weerresultaat-specifieke-dag p,
+    #weerresultaat-specifieke-dag b,
+    #weerresultaat p,
+    #weerresultaat b {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    #opslaan-knop,
+    #verander {
+        min-width: 150px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #opslaan-knop,
+    #verander {
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 20px;
+    }
+      #weerresultaat-specifieke-dag img{
+        width: 30px !important;
+        height: 30px !important;
+    }
+}
+

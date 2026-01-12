@@ -1,0 +1,118 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CV</title>
+
+
+        <!-- letters -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+        <!-- favicon -->
+        <link rel="icon" type="image/png" href="Favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="Favicon/favicon.svg" />
+        <link rel="shortcut icon" href="Favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="Faviocn/apple-touch-icon.png" />
+        <link rel="manifest" href="Favicon/site.webmanifest" />
+
+
+        <link rel="stylesheet" href="assets/css/style-cv.css">
+
+        <!-- alvast thema maken boven CSS en HTML, zodat geen flits (omdat JS onderaan nog moet inladen) -->
+        <script src="assets/js/bovenscript.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="fixed-background"></div>
+
+
+        <div id="navbar-container">
+            <nav class="navbar">
+                <div id="navbar-titel"><b>Portfolio Chris Koopman</b></div>
+                <ul>
+                    <li><a href="index.html"><b>Over</b></a></li>
+                    <li><a href="projecten.html"><b>Projecten</b></a></li>
+                    <li><a href="contact.html"><b>Contact</b></a></li>
+                    <li><a class="navbar-active" href="cv.html"><b>CV</b></a></li>
+                    <li onclick="anderThema()"><a id="anderthema" href="#"><b>☀️</b></a></li>
+                </ul>
+
+                <img id="hamburger-btn" class="hamburger-btn" src="assets/Afbeeldingen/navbarmenu.png"><img>
+            </nav>
+        </div>
+
+            <div id="achtergrondfade">
+
+
+        <div id="CV-container">
+          <div id="bovenkant">
+            <img id="cvimg" src="assets/Afbeeldingen/plaatjechris.png">
+            <h4>Chris Koopman</h4>
+            <p id="opleiding-text">MBO 4 Software Developer</p>
+          </div>
+
+          <p id="over-mij-tekst">Studerende Software Developer met een passie voor het visualiseren van websites. Goed in zowel samen als zelgstandig werken</p>
+
+          <div id="flex-wrapper-middenstuk-en-zijkant">
+          <div id="middenstuk">
+            <div class="titels">Persoonlijke informatie</div><div id="persoonlijke-info">
+                <b>Leeftijd:</b>&nbsp;<p style="display:inline;">18 jaar</p><br>
+                <b>Email:</b>&nbsp;<p style="display:inline;">koopmanchris4@gmail.com</p><br>
+            </div>
+            <div class="titels">Vaardigheden</div><div id="vaardigheden">
+               <ul>
+                <li>Front / Back-end</li>
+                <li>HTML / CSS</li>
+                <li>JavasSript</li>
+                <li>Bootstrap</li>
+                <li>PHP</li>
+                <li>MySQL</li>
+               </ul>
+            </div>
+            <div class="titels">Opleidingen</div><div id="opleidingen">
+                <b>MAVO</b><p id="datum">09/2021 - 05/2024</p><br>
+                <b>MBO 4 Software Developer</b><p id="datum">09/2024 - heden</p>
+            </div>
+             
+          </div>
+          <div class="zijkant">
+            <div class="titels">Werkervaring</div><div id="werkervaring">
+                <b>Vulploeg medewerker</b>
+                <p id="datum">09/2022 - 12/2024</p>
+                <p>Jumbo - Jelle Farenhorst DKW & AGF</p>
+                <br>
+                <b>Spoelkeuken mederwerker</b>
+                <p id="datum">01/2025 - heden</p>
+                <p>Restaurant Ko</p>
+            </div>
+
+            <div class="titels">Stages</div><div id="stages">
+            <b>Medewerker</b>
+            <p id="datum">02/2023 - 03/2023</p>
+            <p>Intertoys</p>
+            <br>
+            <b>Software Developer</b>
+            <p id="datum">09/2025 - 01/2026</p>
+            <p>RETO</p>
+            </div>
+               </div>
+               </div>
+               <a id="download-cv-btn"href="assets/cv/cv.pdf"downloadtarget="_self">
+                  📄 Download deze CV</a>
+                </div>
+        </div>
+
+     
+      
+
+        
+
+        <script src="assets/js/script.js"></script>
+    </body>
+
+    </html>

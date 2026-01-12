@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Chris Koopman</title>
+
+
+    <!-- letters -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="Favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="Favicon/favicon.svg" />
+    <link rel="shortcut icon" href="Favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="Faviocn/apple-touch-icon.png" />
+    <link rel="manifest" href="Favicon/site.webmanifest" />
+
+
+    <link rel="stylesheet" href="assets/css/style-home.css">
+
+    <!-- alvast thema maken boven CSS en HTML, zodat geen flits (omdat JS onderaan nog moet inladen) -->
+    <script src="assets/js/bovenscript.js"></script>
+
+
+</head>
+
+<body>
+    <div class="fixed-background"></div>
+
+
+    <div id="navbar-container">
+        <nav class="navbar">
+            <div id="navbar-titel"><b>Portfolio Chris Koopman</b></div>
+            <ul>
+                <li><a class="navbar-active" href="#over-mij-tekst"><b>Over</b></a></li>
+                <li><a href="projecten.html"><b>Projecten</b></a></li>
+                <li><a href="contact.html"><b>Contact</b></a></li>
+                <li><a href="cv.html"><b>CV</b></a></li>
+                <li onclick="anderThema()"><a id="anderthema" href="#"><b>☀️</b></a></li>
+            </ul>
+
+            <img id="hamburger-btn" class="hamburger-btn" src="assets/Afbeeldingen/navbarmenu.png"><img>
+        </nav>
+    </div>
+
+    <div id="grijsvlak">
+        <img id="plaatjechris" src="assets/Afbeeldingen/plaatjechris.png">
+        <div class="tekst-blok-naast-hoofd">
+            <h1>Chris Koopman</h1>
+            <h2 id="blauwetekst-opleiding">MBO 4 Software Developer</h2>
+            <a id="projecten-knop" href="projecten.html" class="knop">Bekijk mijn projecten</a>
+        </div>
+    </div>
+
+    <div id="grijsvlak2">
+
+        <h1>vaardigheden</h1>
+
+        <div id="vaardigheden-container">
+            <div id="vaardigheden-blok-boven">
+                <div class="vaardigheid">
+                    <img src="assets/Afbeeldingen/html5.svg">
+                    <h2>HTML</h2>
+                </div>
+                <div class="vaardigheid">
+                    <img src="assets/Afbeeldingen/css.svg">
+                    <h2>CSS</h2>
+                </div>
+                <div class="vaardigheid">
+                    <img src="assets/Afbeeldingen/javascript.svg">
+                    <h2>javaScript</h2>
+                </div>
+                <div class="vaardigheid">
+                    <img src="assets/Afbeeldingen/php.svg">
+                    <h2>PHP</h2>
+                </div>
+            </div>
+
+            <div id="vaardigheden-blok-onder">
+                <div class="vaardigheid">
+                    <img src="assets/Afbeeldingen/boostrap.svg">
+                    <h2>Bootstrap</h2>
+                </div>
+                <div class="vaardigheid">
+                    <img src="assets/Afbeeldingen/mysql.svg">
+                    <h2>MySQL</h2>
+                </div>
+                <div class="vaardigheid">
+                    <img src="assets/Afbeeldingen/front&backend.png">
+                    <h2>Front-end / Back-end</h2>
+                </div>
+            </div>
+
+
+            <div id="over-mij-tekst">
+                <h1><b>Over mij</b></h1><br>
+                <p class="kleine-tekst-over-mij">Mijn naam is Chris Koopman, ik ben 18 jaar oud en doe momenteel de
+                    opleiding, <b>Software Developer</b> op het ICT Campus. Mijn passie voor het vak begon rond mijn
+                    13de
+                    toen ik
+                    voor het eerst een websites bouwde met hulpmiddelen zoals WIX. Het maken van websites sprak me aan,
+                    dus
+                    toen ik de opleiding, Software Developer tegenkwam, wilde ik maar één ding. <b>Ik wilde gaan
+                        programmeren!</b>
+                    <br><br>
+
+                    Ik ben een harde werker al zeg ik het zelf, zo ben ik vrijwel de gehele dag bezig met opdrachten en
+                    projecten en maak mijn werk altijd netjes af.
+                    Ik heb een grote passie voor het maken van mooie webpagina's. Het <b>visualiseren en het
+                        realiseren</b>
+                    van
+                    webpagina's trekt me aan! <br><br>
+
+                    Ik zou graag in mijn toekomst een Software Developer willen zijn. De front-end en back-end lessen
+                    zijn
+                    <b>Front-end als Back-end</b> vaardigheden op te doen en daar in de toekomst werk in te vinden.
+                </p>
+            </div>
+        </div>
+</body>
+
+<script src="assets/js/script.js"></script>
+
+</html>

@@ -1,0 +1,84 @@
+body{
+    background-image: url(verkeer2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+      }
+
+      #stoplichtbox{
+        border: 35px solid rgb(0, 0, 0);
+        margin-left: 25%;
+        border-radius: 7%;
+        width: 155px;
+        height: 450px;
+        background-color: rgb(0, 0, 0)
+
+      }
+
+      #rondjerood1{
+        height:150px;
+        width: 150px;
+        border-radius: 50%;
+        background-color: rgb(136, 24, 24);
+      }
+
+      #rondjegeel1{
+        height:150px;
+        width: 150px;
+        border-radius: 50%;
+        background-color: rgb(109, 76, 14);
+      }
+
+      #rondjegroen1{
+        height:150px;
+        width: 150px;
+        border-radius: 50%;
+        background-color: rgb(10, 64, 10);
+      }
+
+      #paal1{
+        margin-left: 34%;
+        height:250px;
+        width:45px;
+        background-color: rgb(0, 0, 0);
+      }
+      
+
+      #stoplichtbox2{
+        position: absolute;
+        left: 500px;
+        top: 0px;
+        border: 35px solid rgb(0, 0, 0);
+        margin-left: 25%;
+        border-radius: 7%;
+        width: 155px;
+        height: 450px;
+        background-color: rgb(0, 0, 0)
+      }
+
+      #rondjerood2{
+        height:150px;
+        width: 150px;
+        border-radius: 50%;
+        background-color: rgb(136, 24, 24);
+      }
+
+      #rondjegeel2{
+        height:150px;
+        width: 150px;
+        border-radius: 50%;
+        background-color: rgb(109, 76, 14);
+      }
+
+      #rondjegroen2{
+        height:150px;
+        width: 150px;
+        border-radius: 50%;
+        background-color: rgb(10, 64, 10);
+      }
+
+      #paal2{
+        margin-left: 34%;
+        height:250px;
+        width:45px;
+        background-color: rgb(0, 0, 0);
+      }

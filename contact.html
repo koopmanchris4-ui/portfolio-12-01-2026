@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Chris Koopman</title>
+
+
+    <!-- letters -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="Favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="Favicon/favicon.svg" />
+    <link rel="shortcut icon" href="Favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="Faviocn/apple-touch-icon.png" />
+    <link rel="manifest" href="Favicon/site.webmanifest" />
+
+
+    <link rel="stylesheet" href="assets/css/style-contact.css">
+
+    <!-- alvast thema maken boven CSS en HTML, zodat geen flits (omdat JS onderaan nog moet inladen) -->
+    <script src="assets/js/bovenscript.js"></script>
+
+
+</head>
+
+<body>
+    <div class="fixed-background"></div>
+
+
+    <div id="navbar-container">
+        <nav class="navbar">
+            <div id="navbar-titel"><b>Portfolio Chris Koopman</b></div>
+            <ul>
+                <li><a href="index.html"><b>Over</b></a></li>
+                <li><a href="projecten.html"><b>Projecten</b></a></li>
+                <li><a class="navbar-active" href="contact.html"><b>Contact</b></a></li>
+                <li><a href="cv.html"><b>CV</b></a></li>
+                <li onclick="anderThema()"><a id="anderthema" href="#"><b>☀️</b></a></li>
+            </ul>
+
+            <img id="hamburger-btn" class="hamburger-btn" src="assets/Afbeeldingen/navbarmenu.png"><img>
+        </nav>
+    </div>
+
+    <div id="achtergrondfade">
+
+
+        <div id="boventekst">
+            <h1>Laten we kennis maken!</h1>
+            <p>Heeft u nog vragen of wilt u contact opnemen? Vul het onderstaande formulier in of neem contact met me op
+                via
+                social media!</p>
+        </div>
+
+
+        <div id="contact-vlak">
+            <form action="https://api.web3forms.com/submit" method="POST">
+
+                <input type="hidden" name="access_key" value="fec86378-3709-4cd7-ab5f-84f5c12fc21b">
+
+                <div id="input-container">
+                    <input class="input" type="text" name="name" required placeholder="Naam:">
+                    <input class="input" type="email" name="email" required placeholder="E-mailadres:">
+
+                    <div class="dropdown">
+                        <input type="text" id="dropdownBtn" class="input" placeholder="Kies of typ zelf een onderwerp"></button>
+
+                        <ul id="dropdownMenu">
+                            <li data-value="school / opleiding">School / Opleiding</li>
+                            <li data-value="stage / leerplek">Stage / Leerplek</li>
+                            <li data-value="project">Project</li>
+                            <li data-value="feedback op mijn werk">Feedback op mijn werk</li>
+                            <li data-value="anders">Anders</li>
+                        </ul>
+
+                        <input type="hidden" name="subject" id="dropdownValue" value="onbekend">
+                    </div>
+
+                    <textarea class="input-groot" name="message" required placeholder="Bericht:"></textarea>
+
+                    <!-- Honeypot Spam Protection -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                    <!-- Custom Confirmation / Success Page -->
+                    <!-- <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html"> -->
+
+                    <button id="verstuurknop" type="submit">Verstuur bericht</button>
+                </div>
+        </div>
+        </form>
+
+
+        <p id="tekst-onder-contact-vlak">Of neem contact met me op via social media door op de icoontjes te klikken!</p>
+
+        <div id="media-container">
+
+            <a href="https://www.instagram.com/chris_koopman14/">
+                <img id="instagram" src="assets/Afbeeldingen/plaatjeinstragram.png" href="youtube.com"></img>
+            </a>
+
+            <a href="https://mail.google.com/mail/u/0/?fs=1&to=koopmanchris4@gmail.com&tf=cm">
+                <img id="gmail" src="assets/Afbeeldingen/plaatjemail.png"></i>
+            </a>
+
+            <a href="https://linkedin.com/in/chris-koopman-48811529a">
+                <img id="linkedin" src="assets/Afbeeldingen/linkedin.png"></i>
+            </a>
+
+
+        </div>
+    </div>
+    
+
+</body>
+
+<script src="assets/js/script.js"></script>
+
+</html>

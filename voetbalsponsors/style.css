@@ -1,0 +1,502 @@
+/* zodat page niet verspringt */
+html {
+    overflow-y: auto; 
+}
+
+body {
+    background: linear-gradient(135deg, #5a5a5a, #3d3d3d); /* medium grijs naar donkerder grijs */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    max-height: 100vh;
+}
+
+.stadion {
+    min-width: 1080px;
+    height: 800px;
+    gap: 10px;
+    margin: 50px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto 1fr auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.veld {
+    grid-row: 2;
+    grid-column: 2;
+    height: 100%;
+    width: 100%;
+    max-height: 600px;
+    max-width: 1000px;
+    object-fit: cover;
+    aspect-ratio: 10 / 7;
+}
+
+.up {
+    display: grid;
+    height: 100px;
+    width: 100%;
+    border: 1px solid rgb(147, 147, 147);
+    grid-column: 2;
+    grid-row: 1;
+    box-shadow:
+        rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    transform: rotateX(180deg);
+}
+
+.down {
+    display: grid;
+    height: 100px;
+    width: 100%;
+    border: 1px solid rgb(147, 147, 147);
+    grid-column: 2;
+    grid-row: 3;
+    box-shadow:
+        rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.left {
+    display: grid;
+    flex-direction: column;
+    height: 100%;
+    width: 100px;
+    border: 1px solid rgb(147, 147, 147);
+    grid-column: 1;
+    grid-row: 2;
+    box-shadow:
+        rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    transform: rotateY(180deg);
+}
+
+.right {
+    display: grid;
+    flex-direction: column;
+    width: 100px;
+    height: 100%;
+    grid-column: 3;
+    grid-row: 2;
+    border: 1px solid rgb(147, 147, 147);
+    box-shadow:
+        rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.sponsor {
+    transition: 0.2s;
+    flex: 1;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.731);
+    border: 1px solid rgb(147, 147, 147);
+    cursor: pointer;
+    &:hover {
+        filter: brightness(80%);
+    }
+}
+
+#alles-wrapper {
+    display: flex;
+    height: 100%;
+}
+
+#stadionWrapper {
+    margin-left: 250px; /* ruimte voor menu */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    max-height: 100vh;
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+    color: white;
+    margin: 0 auto;
+}
+
+#generateBtn {
+    transition: 0.2s;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(22, 157, 240);
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    &:hover {
+        background-color: rgb(3, 93, 149);
+        transform: scale(1.04);
+    }
+}
+
+.update-btn {
+    transition: 0.2s;
+    color: white;
+    background-color: rgb(22, 157, 240);
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    &:hover {
+        background-color: rgb(8, 95, 150);
+        transform: scale(1.04);
+    }
+}
+
+#achtergronden {
+    transition: 0.2s;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(165, 165, 165);
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    &:hover {
+        background-color: rgb(83, 83, 83);
+        transform: scale(1.04);
+    }
+}
+
+#reset-verdiepingen {
+    margin-bottom: 20px;
+    transition: 0.2s;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(196, 56, 56);
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    &:hover {
+        background-color: rgb(118, 24, 24);
+        transform: scale(1.04);
+    }
+}
+
+#reset-deze-verdieping {
+    margin-bottom: 20px;
+    transition: 0.2s;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(199, 91, 91);
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    &:hover {
+        background-color: rgb(161, 57, 57);
+        transform: scale(1.04);
+    }
+}
+
+.tijd-input {
+    border: none;
+    cursor: pointer;
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#verdiepingenInput {
+    width: fit-content;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+#verdiepingenInput-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#side-menu {
+    left: 0;
+    width: 250px; /* breedte menu */
+    height: 100vh; /* volledige hoogte */
+    background-color: #333333be;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+
+#stadion-en-pijl-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#navButtons-wrapper {
+    position: absolute;
+    right: 20px; /* altijd rechts binnen wrapper */
+    transform: tanslateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#prevBtn,
+#nextBtn {
+    border: none;
+    background: none;
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    &:hover {
+        color: rgb(234, 234, 234);
+        transform: scale(1.1);
+        transition: 0.3s;
+    }
+}
+
+/* side menu */
+
+input[type="number"],
+.inputs-in-menu {
+    width: 100% !important;
+    margin-bottom: 10px;
+    text-align: center;
+    border: none;
+    outline: none;
+    height: 30px;
+    border-radius: 10px;
+}
+
+/* sponsor click menu */
+
+#fade-achter-menu,
+#fade-achter-menu2 {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+#fade-achter-menu.show,
+#fade-achter-menu2.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#menu,
+#achtergrondmenu {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.3s;
+    padding: 20px;
+    margin: auto;
+    opacity: 1;
+    max-width: 700px;
+    min-width: 250px;
+    width: 30%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow:
+        rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+        rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    overflow: hidden;
+}
+
+#image-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.achtergrondkeuze {
+    margin: 10px;
+    transition: 0.2s;
+    width: 200px;
+    height: 150px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    &:hover {
+        filter: brightness(80%);
+    }
+}
+
+#titel-menu {
+    margin: auto;
+    border-bottom: 1px solid black;
+}
+
+#titelenX-wrapper,
+#titelenX-wrapper2 {
+    display: flex;
+}
+
+#menu-sluitknop {
+    background-color: transparent;
+    border: none;
+    color: rgb(195, 1, 1);
+    font-weight: 600;
+    font-size: larger;
+    padding: 0;
+    cursor: pointer;
+}
+
+#savemenuBtn {
+    width: 50%;
+    display: block;
+    margin: auto;
+    cursor: pointer;
+    transition: 0.2s;
+    border: none;
+    background-color: rgb(35, 111, 203);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    &:hover {
+        background-color: rgb(26, 66, 166);
+        transform: scale(1.03);
+    }
+}
+
+#deleteBtn {
+    width: 30%;
+    display: block;
+    margin: 5px auto;
+    cursor: pointer;
+    transition: 0.2s;
+    border: none;
+    background-color: rgb(173, 43, 36);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    &:hover {
+        background-color: rgb(107, 14, 8);
+        transform: scale(1.03);
+    }
+}
+
+#button-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.menukleuren {
+    transition: 0.1s;
+    width: 50px;
+    height: 30px;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.menukleuren.selected {
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 5px 15px;
+    outline: 2px solid rgb(87, 87, 87);
+}
+
+#none {
+    background-color: rgb(197, 197, 197);
+}
+#lichtblauw {
+    background-color: lightskyblue;
+}
+#indigo {
+    background-color: indigo;
+}
+#paars {
+    background-color: rgb(168, 50, 168);
+}
+#violet {
+    background-color: violet;
+}
+#roze {
+    background-color: pink;
+}
+#blauw {
+    background-color: rgb(0, 123, 255);
+}
+#geel {
+    background-color: rgb(255, 204, 0);
+}
+#oranje {
+    background-color: orange;
+}
+#lichtgroen {
+    background-color: lightgreen;
+}
+#groen {
+    background-color: rgb(66, 153, 16);
+}
+
+#grijs {
+    background-color: rgb(138, 138, 138);
+}
+
+#naamInput,
+#einddatumInput,
+#tagsInput {
+    height: 20px;
+    margin: auto;
+    border: 1px solid rgb(211, 211, 211);
+    outline: none;
+    text-align: center;
+    cursor: text;
+    width: 50%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+#geennaam {
+    color: red !important;
+}
+
+/* MEDIA QUERIES VOOR RESPONSIVE DESIGN */
+
+/* bij 1700px */
+/* sidebar komt boven */
+@media screen and (max-width: 1700px) { 
+    #alles-wrapper { 
+        flex-direction: column;
+    }
+    #side-menu {
+    width: 100%;
+        height: auto;
+    }
+
+    #stadionWrapper {
+        margin-left: 0; /*geen margin meer want side menu is weg*/
+        width: 100%;
+        overflow-x: auto; /* scroll naar zijkant */
+        overflow-y: hidden;
+        display: flex;
+        flex-direction: column; 
+    }
+    
+    /* inputs in side menu iets kleiner */
+    .inputs-in-menu {
+        width: 50% !important; 
+    }
+}
+
+/* Extra tweak voor de knoppen op mobiel */
+@media screen and (max-width: 1100px) {
+    #stadionWrapper {
+        align-items: flex-start; 
+        /* bij 1100px, is stadion in midden te groot voor scherm, dus begint hij helemaal links */
+    }
+}

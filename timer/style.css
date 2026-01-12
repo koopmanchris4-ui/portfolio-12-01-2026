@@ -1,0 +1,288 @@
+body {
+    background: linear-gradient(135deg, rgb(139, 87, 208), rgb(85, 172, 238));
+    max-height: 100vh;
+    background-attachment: fixed;
+}
+
+#container-om-countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh; /* 🔥 vult het hele scherm */
+}
+
+#countdown {
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: clamp(40px, 15vw, 150px);
+    margin-top: auto;
+    user-select: none;
+    transition: 0.3s;
+}
+
+#container-om-input {
+    text-align: center;
+    width: 100%;
+}
+
+.input {
+    border: none;
+    width: 25%;
+    height: 50px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: larger;
+    margin: 10px;
+    box-shadow:
+        rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px,
+        rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px,
+        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.input,
+#knop {
+    transition: opacity 0.5s ease;
+}
+
+#knop {
+    margin-top: 10px !important;
+    font-size: 20px;
+    margin: auto;
+    display: block;
+    width: 250px;
+    height: 3rem;
+    border: none;
+    background-color: rgb(133, 176, 255);
+    color: white;
+    border-radius: 10px;
+    background-color: rgb(105, 138, 246);
+    box-shadow:
+        rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+        rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+#knop:hover {
+    background-color: rgb(133, 176, 255);
+    transition: 0.2s;
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+.verwijderen {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.verborgen {
+    display: none !important;
+}
+
+.tevoorschijn {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#container-om-knoppen {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#reset-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#reset {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    font-size: 20px;
+    display: block;
+    width: 300px;
+    height: 3rem;
+    border: none;
+    background-color: rgb(115, 87, 240);
+    color: white;
+    border-radius: 10px;
+    box-shadow:
+        rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+        rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.reset-tevoorschijn,
+.pauze-tevoorschijn,
+.plus-tevoorschijn,
+.mute-tevoorschijn {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+#reset:hover {
+    background-color: rgb(95, 70, 220);
+    cursor: pointer;
+    transform: scale(1.02);
+    transition: 0.2s;
+}
+
+#pauze {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    width: 50px;
+    height: 3rem;
+    border: none;
+    color: white;
+    background-color: rgb(115, 87, 240);
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 20px;
+    box-shadow:
+        rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+        rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+#mute {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    width: 50px;
+    height: 3rem;
+    border: none;
+    color: white;
+    background-color: rgb(115, 87, 240);
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 20px;
+    box-shadow:
+        rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+        rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+#pauze:hover,
+#mute:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: rgb(95, 70, 220);
+}
+
+#container-om-plus-knoppen {
+    width: fit-content;
+    border: none;
+    margin: auto;
+    display: flex;
+}
+
+#plusuur,
+#plusminuut {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    height: 3rem;
+    width: fit-content;
+    border: none;
+    color: white;
+    background-color: rgb(113, 99, 134);
+    border-radius: 10px;
+    font-size: 15px;
+    box-shadow:
+        rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+        rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+#plusuur:hover,
+#plusminuut:hover {
+    transition: 0.3s;
+    transform: scale(1.05);
+    background-color: rgb(88, 79, 97);
+}
+
+.melding {
+    font-family: "Poppins", sans-serif;
+    color: rgb(240, 240, 240);
+    margin: auto;
+    font-size: clamp(20px, 5vw, 40px);
+    font-weight: 700;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: rgb(255, 200, 70);
+    font-style: italic;
+}
+
+.knipper {
+    animation: knipperen 0.7s infinite;
+}
+
+@keyframes knipperen {
+    0% {
+        color: white;
+    }
+    50% {
+        color: rgba(227, 6, 6, 0);
+    }
+    100% {
+        color: white;
+    }
+}
+
+#progressie-balk-container {
+    width: 60%;
+    margin: auto;
+    height: 20px;
+    overflow: hidden;
+    background-color: rgb(123, 38, 184);
+}
+
+#progressie-balk {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 10px;
+    background-color: rgb(255, 255, 255);
+    transition: 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+/* Media queries voor kleinere beelschermen: */
+
+@media screen and (max-width: 900px) {
+    #container-om-input {
+        /* zodat inputs onder elkaar bij kleine schermen */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .input {
+        width: 90%;
+        min-width: unset; /* verwijder minimum breedte */
+    }
+    #countdown {
+        margin-top: 0;
+    }
+    #container-om-countdown {
+        height: 20vh;
+    }
+}
+
+/* bij HELE kleine schermen, knoppen groter */
+
+@media screen and (max-width: 480px) {
+    #knop,
+    #reset,
+    #pauze,
+    #plusuur,
+    #plusminuut {
+        width: 90% !important;
+        font-size: 1rem;
+    }
+}
